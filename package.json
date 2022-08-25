@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "bootstrap-icons": "^1.9.1",
-        "font-awesome": "^4.7.0"
+        "font-awesome": "^4.7.0",
+        "react-typical": "^0.1.3"
     }
 }
