@@ -6,13 +6,21 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AnneeFormRequest;
 use App\Models\Annee;
+use App\Models\Enseignant;
+use App\Models\Classe;
+use App\Models\Eleve;
+use App\Models\User;
 class AnneeController extends Controller
 {
 
     public function index()
     {
+        $classes = Classe::count();
+        $users = User::count();
+        $enseignants = Enseignant::count();
+        $eleves = Eleve::count();
         $annee = Annee::all();
-        return view('admin.annee.index', compact('annee'));
+        return view('admin.annee.index', compact('annee', 'eleves', 'classes', 'users', 'enseignants'));
     }
 
     

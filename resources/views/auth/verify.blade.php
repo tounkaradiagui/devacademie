@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                <div class="card-header text-white" style="background-color:#0B6623 ;">{{ __('Verifier votre adresse email') }}</div>
 
                 <div class="card-body">
                     @if (session('resent'))

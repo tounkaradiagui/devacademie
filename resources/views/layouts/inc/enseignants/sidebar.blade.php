@@ -9,35 +9,28 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-account menu-icon"></i>
-              <span class="menu-title">Utilisateurs</span>
+              <span class="menu-title">Mes activités</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Elèves</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Enseignants</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Parents</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Matières</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Absences</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Comptabilité</span>
+              <span class="menu-title">Paiements</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Paiement</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Versement</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Liste Paiement</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Liste Facture</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Inscription</span>
-            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#consulter" aria-expanded="false" aria-controls="ui-basic">
@@ -47,8 +40,7 @@
             </a>
             <div class="collapse" id="consulter">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Absences</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Classe</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Classes</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Emploi du temps</a></li>
               </ul>
             </div>

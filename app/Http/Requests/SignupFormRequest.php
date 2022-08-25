@@ -13,7 +13,7 @@ class SignupFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,77 @@ class SignupFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        // required|mimes:pdf|max:1000',
+
+        $rules = [
+
+            'image' => [
+                'nullable',
+                'mimes:jpg,jpeg,png'
+            ],
+            
+            'nom' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+            
+            'prenom' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'sexe' => [
+                'required',
+            ],
+
+            'email' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'date_de_naissance' => [
+                'required',
+                
+            ],
+
+            'lieu_de_naissance' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'localite' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'niveau_id' => [
+                'required',
+                
+            ],
+
+            'classe_id' => [
+                'required',
+               
+            ],
+
+            'acte' => [
+                'required',
+                'mimes:pdf',
+                'max:5000'
+                
+            ],
+
+            'annee' => [
+                'required',
+                
+            ],
         ];
+
+        return $rules; 
     }
 }

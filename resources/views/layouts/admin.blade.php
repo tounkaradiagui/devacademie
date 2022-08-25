@@ -13,21 +13,19 @@
     <link rel="stylesheet" href="{{asset('admin/vendors/base/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- plugin css for this page -->
-    <!-- <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}"> -->
+    <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
    
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('admin/images/dev_logo.png')}}"/>
-  
+    <link rel="shortcut icon" href="{{asset('admin/images/dev_logo.png')}}" />
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"> -->
-
-
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" defer></script> -->
-    <!-- <script type="text/javascript">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
       google.charts.load('current', {'packages':['bar']});
       google.charts.setOnLoadCallback(drawChart);
 
@@ -51,9 +49,10 @@
 
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
-    </script> -->
+    </script>
 </head>
 <body>
+
 
 
 <div class="container-scroller">
@@ -73,19 +72,30 @@
 </div>
 
 
+    
+    <script src="{{asset('admin/js/dashboard.js')}}"></script>
+
+
+
     <script src="{{asset('admin/vendors/base/vendor.bundle.base.js')}}"></script>
 
-    <script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts.js') }}"></script>
+    <script src="{{asset('admin/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
 
     <script src="{{asset('admin/js/off-canvas.js')}}"></script>
     <script src="{{asset('admin/js/hoverable-collapse.js')}}"></script>
     <script src="{{asset('admin/js/template.js')}}"></script>
 
     <script src="{{asset('admin/js/dashboard.js')}}"></script>
+    <script src="{{asset('admin/js/data-table.js')}}"></script>
+    <script src="{{asset('admin/js/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
     
-
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#myDataTable').DataTable();
+        });
+    </script>
+    
 </body>
 </html>

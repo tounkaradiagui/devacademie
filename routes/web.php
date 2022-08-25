@@ -33,6 +33,11 @@ Route::prefix('admin')->group(function(){
     Route::get('niveaux/create', [App\Http\Controllers\Admin\NiveauController::class, 'create'])->name('niveaux');
     Route::post('niveaux/create', [App\Http\Controllers\Admin\NiveauController::class, 'store'])->name('niveaux');
 
+    Route::get('edit-niveau/{niveau_id}', [App\Http\Controllers\Admin\NiveauController::class, 'edit']);
+    Route::put('update-niveau/{niveau_id}', [App\Http\Controllers\Admin\NiveauController::class, 'update']);
+
+    // Route::get('show-niveau/{niveau_id}', [App\Http\Controllers\Admin\NiveauController::class, 'show']);
+
     Route::get('classes', [App\Http\Controllers\Admin\ClasseController::class, 'index'])->name('classes');
     Route::get('classes/create', [App\Http\Controllers\Admin\ClasseController::class, 'create'])->name('classes');
     Route::post('classes/create', [App\Http\Controllers\Admin\ClasseController::class, 'store'])->name('classes');
@@ -47,8 +52,16 @@ Route::prefix('admin')->group(function(){
     Route::post('eleves', [App\Http\Controllers\Admin\EleveController::class, 'create'])->name('eleves.register');
 
     Route::get('enseignants', [App\Http\Controllers\Admin\EnseignantController::class, 'index'])->name('enseignants');
-    Route::get('secretaires', [App\Http\Controllers\Admin\SecretaireController::class, 'index'])->name('secretaires');
+    Route::get('enseignant/create', [App\Http\Controllers\Admin\EnseignantController::class, 'create'])->name('enseignants');
+    Route::post('enseignant/save', [App\Http\Controllers\Admin\EnseignantController::class, 'store'])->name('enseignants');
+
+
     Route::get('parents', [App\Http\Controllers\Admin\ParentController::class, 'index'])->name('parents');
+
+    Route::get('mon-profile', [App\Http\Controllers\Profile\UserController::class, 'index'] )->name('mon-profile');
+    Route::post('my-profile-update', [App\Http\Controllers\Profile\UserController::class, 'store'] )->name('mon-profile');
+
+    
 });
 
 
@@ -61,8 +74,10 @@ Route::prefix('admin')->group(function(){
 Route::prefix('parent')->group(function(){
 
     Route::get('dashboard', [App\Http\Controllers\Parent\DashboardController::class, 'index'])->name('parent.dashboard');
-    Route::get('signup/list-signup', [App\Http\Controllers\Parent\SignupController::class, 'index'])->name('signup');
-    Route::get('signup', [App\Http\Controllers\Parent\SignupController::class, 'create'])->name('signup');
+
+    Route::get('signup', [App\Http\Controllers\Parent\SignupController::class, 'index'])->name('signup');
+    Route::get('signup/create', [App\Http\Controllers\Parent\SignupController::class, 'create'])->name('signup');
+    Route::post('signup/create', [App\Http\Controllers\Parent\SignupController::class, 'store'])->name('signup');
 
 });
 

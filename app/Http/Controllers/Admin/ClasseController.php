@@ -14,7 +14,8 @@ class ClasseController extends Controller
     {
         
         $classe = Classe::all();
-        return view('admin.classes.index', compact('classe'));
+        $classes = Classe::count();
+        return view('admin.classes.index', compact('classe', 'classes'));
 
     }
     

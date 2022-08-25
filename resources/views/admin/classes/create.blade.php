@@ -3,7 +3,7 @@
 
     <!-- debut d'ajout de classes -->
 
-<div class="card">
+<div class="card bg-dark">
     <h5 class="card-header">
         Ajout des classes <a href="{{url('admin/classes')}}" class="btn btn-danger btn-sm float-end text-white" >Retour</a>
     </h5>

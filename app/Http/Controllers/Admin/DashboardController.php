@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Annee;
 use App\Models\Classe;
 use App\Models\Eleve;
 use App\Models\Enseignant;
@@ -17,6 +18,7 @@ class DashboardController extends Controller
         $users = User::count();
         $enseignants = Enseignant::count();
         $eleves = Eleve::count();
+        // $annee = Annee::all();
         return view('admin.dashboard', compact('classes', 'users', 'enseignants', 'eleves'));
     }
     

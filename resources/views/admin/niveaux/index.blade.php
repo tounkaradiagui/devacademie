@@ -65,8 +65,14 @@
                 <tr>
                     <td>{{$nom->id}}</td>
                     <td>{{$nom->niveau}}</td>
-                    <td> <a href="#" class="btn btn-success btn-sm text-white">Edit</a></td>
-                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-danger btn-sm text-white">Delete</a></td>
+
+                    <td>
+                        <a href="{{url('admin/edit-niveau/'.$nom->id)}}"  href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                    </td>
+                    <td>
+                        <a href="#" value="{{$nom->id}}" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          
+                    </td>
+                
                 </tr>
                     
             @endforeach
@@ -77,3 +83,27 @@
 
 
 @endsection
+
+
+@section('scripts')
+
+    <script>
+        $(document).ready(function(){
+
+            // first method
+            // $('.deletevolbtn').click(function(e){
+                // e.preventDefault();
+
+            // the second one.
+            $(document).on('click', '.deletevolbtn', function(e){
+            e.preventDefault();
+
+                var vol_id = $(this).val();
+                $('#vol_id').val(vol_id);
+                $('#deleteModal').modal('show');
+            });
+        });
+    </script>
+
+
+@endsection()

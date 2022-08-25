@@ -22,6 +22,11 @@ class User extends Authenticatable
         'email',
         'statut',
         'password',
+        'adresse',
+        'lieu_de_naissance',
+        'phone',
+        'image',
+
     ];
 
     public function admin()

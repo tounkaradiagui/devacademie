@@ -19579,6 +19579,9 @@ h1, .h1,
 h2, .h2,
 .h2 {
   font-size: 1.875rem;
+  justify-content: start;
+  padding-top: 30px;
+  padding-right: 90px;
 }
 
 h3, .h3,
@@ -21243,7 +21246,7 @@ code {
 
 .card-inverse-primary {
   background: rgba(77, 131, 255, 0.2);
-  border: 1px solid theme-color-level(#4d83ff, 1);
+  border: 3px solid theme-color-level(#4d83ff, 1);
   color: theme-color-level(#4d83ff, 3);
 }
 

@@ -80,5 +80,12 @@
     <script src="{{asset('admin/js/jquery.dataTables.js')}}"></script>
     <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
     
+
+
+    <script>
+        $(document).ready( function () {
+            $('#myDataTable').DataTable();
+        });
+    </script>
 </body>
 </html>

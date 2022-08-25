@@ -12,37 +12,21 @@
               <span class="menu-title">Emploi du temps</span>
               
             </a>
-           
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" data-toggle="collapse" href="#consultation" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Mes cours</span>
+              <span class="menu-title">Consulter</span>
+              <i class="menu-arrow"></i>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Mes Abscenes</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Mes cours</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Mes Bulletins</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Mes notes</span>
-            </a>
+            <div class="collapse" id="consultation">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Matières</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Abscenes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Bulletins</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Notes</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
@@ -64,8 +48,9 @@
             </a>
             <div class="collapse" id="consulter">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Liste de enseignants</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Liste de Classes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Enseignants</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Classes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Trimestres</a></li>
               </ul>
             </div>
           </li>

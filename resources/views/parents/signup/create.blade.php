@@ -7,10 +7,12 @@
     </div>
 
     <div class="card-body">
-        <form action="{{url('parent/signup')}}" method="post" enctype="multipart/form-data">
+        <form action="{{url('parent/signup/create')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
+
                         <div class="form-group">
                             <label for="" class="float-start mb-2">Nom</label>
                             <input type="text" name="nom" class="form-control">
@@ -25,8 +27,8 @@
                             <label class="input-group-text" for="inputGroupSelect02">Sexe</label>
                             <select name="sexe" class="form-select" id="inputGroupSelect02">
                                 <option selected>-------Selectionner------</option>
-                                <option value="{{}}">Masculin</option>
-                                <option value="{{}}">Féminin</option>
+                                <option value="Masculin">Masculin</option>
+                                <option value="Féminin">Féminin</option>
                             </select>
                         </div>
 
@@ -37,7 +39,7 @@
 
                         <div class="form-group">
                             <label for="" class="float-start">Lieu de naissance</label>
-                            <input type="date" name="lieu_de_naissance" class="form-control">
+                            <input type="text" name="lieu_de_naissance" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -45,12 +47,10 @@
                             <input type="text" name="localite" class="form-control">
                         </div>
 
-
                         <div class="form-group mb-3">
-                            <a href="#" type="submit" class="btn btn-sm text-white float-start" style="background-color: #0B6623;" >Soumettre</a>                            
+                            <button type="submit" class="btn btn-sm text-white float-start" style="background-color: #0B6623;" >Soumettre</a>                            
                         </div>
 
-                        
                     </div>
 
                     <div class="col-md-6">
@@ -59,40 +59,49 @@
                             <label for="" class="float-start">Image</label>
                             <input type="file" name="image" class="form-control float-start">
                         </div>
+
     
                         <div class="form-group">
                             <label for="" class="float-start mt-4">Acte de naissance</label>
                             <input type="file" name="acte" class="form-control">
                         </div>
 
+
                         <div class="form-group mb-3">
                             <label for="" class="float-start ">Adresse email</label>
                             <input type="email" name="email" class="form-control">
                         </div>
 
+
                         <div class="form-group">
                             <label for="" class="float-start">Niveau demandé</label>
-                            <select name="niveau" class="form-control mt-3">
+                            <select name="niveau_id" class="form-control mt-3">
                             @foreach ($niveau as $new)
-                                <option value="{{$new->niveau}}">{{ $new->niveau}}</option>
+                                <option value="{{$new->id}}">{{ $new->niveau}}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <label for="" class="float-start">Classe</label>
+                            <select name="classe_id" class="form-control mt-3">
+                            @foreach ($classe as $new)
+                                <option value="{{$new->id}}">{{ $new->libelle}}</option>
                             @endforeach
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="" class="float-start">Classe</label>
-                            <select name="classe" class="form-control mt-3">
-                            @foreach ($classe as $new)
-                                <option value="{{$new->libelle}}">{{ $new->libelle}}</option>
+                            <label for="" class="float-start">Année scolaire</label>
+                            <select name="annee" class="form-control mt-3">
+                            @foreach ($annee as $new)
+                                <option value="{{$new->id}}">{{ $new->libelle}}</option>
                             @endforeach
+                            </select>
                         </div>
-
-                        
-        
                     </div>
-
-
-
                 </div>
                 
             </div>

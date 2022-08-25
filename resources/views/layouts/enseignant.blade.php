@@ -14,6 +14,12 @@
     <!-- endinject -->
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
    
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
     <!-- endinject -->
@@ -79,6 +85,13 @@
     <script src="{{asset('admin/js/data-table.js')}}"></script>
     <script src="{{asset('admin/js/jquery.dataTables.js')}}"></script>
     <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
+
+
+    <script>
+        $(document).ready( function () {
+            $('#myDataTable').DataTable();
+        });
+    </script>
     
 </body>
 </html>

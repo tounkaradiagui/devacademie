@@ -115,10 +115,14 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face5.jpg" alt="profile"/>
+              <img src="{{asset('uploads/profile/' .Auth::user()->image)}}" alt="profile"/>
               <span class="nav-profile-name">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a href="{{url('parent/mon-profile')}}" class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                Mon Profile
+              </a>
               <a class="dropdown-item">
                 <i class="mdi mdi-settings text-primary"></i>
                 Paramètes

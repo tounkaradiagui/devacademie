@@ -36,8 +36,7 @@ class CreateInscriptionsTable extends Migration
             $table->unsignedBigInteger('annee_id');
             $table->foreign('annee_id')
                 ->references('id')
-                ->on('annee_scolaire')
-                ->onDelete('cascade');
+                ->on('annee_scolaire');
             $table->string('acte_de_naissance');
             $table->timestamps();
         });

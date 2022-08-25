@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Classe;
 use App\Models\Eleve;
+use App\Models\Enseignant;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,11 @@ class EleveController extends Controller
     public function index()
     {
         $eleve = Eleve::all();
-        // $classe = Classe::all();
-        return view('admin.eleves.index', compact('eleve'));
+        $classes = Classe::count();
+        $users = User::count();
+        $enseignants = Enseignant::count();
+        $eleves = Eleve::count();
+        return view('admin.eleves.index', compact('eleve', 'eleves', 'classes', 'users', 'enseignants'));
     }
 
     public function create()
