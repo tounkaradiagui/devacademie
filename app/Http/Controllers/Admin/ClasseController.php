@@ -15,14 +15,15 @@ class ClasseController extends Controller
         
         $classe = Classe::all();
         $classes = Classe::count();
-        return view('admin.classes.index', compact('classe', 'classes'));
+        $niveau = Niveaux::all();
+        return view('admin.classes.index', compact('classe', 'classes', 'niveau'));
 
     }
     
     public function create()
     {
-        $niveau = Niveaux::all();
-        return view('admin.classes.create', compact('niveau'));
+        
+        return view('admin.classes.index');
     }
 
     public function store(ClasseFormRequest $request)
@@ -34,8 +35,14 @@ class ClasseController extends Controller
         $classe->libelle = $data['libelle'];
 
         $classe->save();
-        return redirect('admin/classes')->with('message', 'La classe a été ajouté avec succès !');
+        return redirect('admin/classes')->with('success', 'La classe a été ajouté avec succès !');
         
+    }
+
+    public function edit($libelle)
+    {
+        $classe = Classe::fing($libelle);
+        return view('admin.classes.index', compact('classe'));
     }
 
     

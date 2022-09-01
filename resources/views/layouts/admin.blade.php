@@ -10,14 +10,20 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="{{asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/vendors/base/vendor.bundle.base.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('admin/vendors/base/vendor.bundle.base.css')}}"> -->
     <!-- endinject -->
     <!-- plugin css for this page -->
     <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
    
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('admin/css/bootstrap.min.css')}}"> -->
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('admin/images/dev_logo.png')}}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css" 
+    integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -90,12 +96,17 @@
     <script src="{{asset('admin/js/data-table.js')}}"></script>
     <script src="{{asset('admin/js/jquery.dataTables.js')}}"></script>
     <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
+
+    <script src="{{asset('admin/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('admin/js/jquery-3.6.1.min.js')}}"></script>
     
     <script>
         $(document).ready( function () {
             $('#myDataTable').DataTable();
         });
     </script>
+
+    @yield('scripts')
     
 </body>
 </html>

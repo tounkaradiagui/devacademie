@@ -29,6 +29,7 @@
             </a>
             <div class="collapse" id="ui-basicc">
               <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{url('admin/calendrier/index')}}">Emploi du temps</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url('admin/niveaux')}}">Niveaux</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url('admin/classes')}}">Classes</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url('admin/annee')}}">Année Scolaire</a></li>
@@ -59,7 +60,7 @@
             <div class="collapse" id="basice">
               <ul class="nav flex-column sub-menu">
               <li class="nav-item"> <a class="nav-link" href="{{url('admin/inscriptions')}}">Liste des inscriptions</a></li>
-              <li class="nav-item"> <a class="nav-link" href="{{url('admin/signup')}}">Liste des candidatures</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{url('admin/inscrit')}}">Liste des candidatures</a></li>
               </ul>
             </div>
           </li>

@@ -38,9 +38,10 @@ Route::prefix('admin')->group(function(){
 
     // Route::get('show-niveau/{niveau_id}', [App\Http\Controllers\Admin\NiveauController::class, 'show']);
 
-    Route::get('classes', [App\Http\Controllers\Admin\ClasseController::class, 'index'])->name('classes');
-    Route::get('classes/create', [App\Http\Controllers\Admin\ClasseController::class, 'create'])->name('classes');
-    Route::post('classes/create', [App\Http\Controllers\Admin\ClasseController::class, 'store'])->name('classes');
+    Route::get('classes', [App\Http\Controllers\Admin\ClasseController::class, 'index'])->name('classes.index');
+    Route::post('classes/create', [App\Http\Controllers\Admin\ClasseController::class, 'store'])->name('classes.index');
+    Route::get('edit-classe/{libelle}', [App\Http\Controllers\Admin\ClasseController::class, 'edit'])->name('classes.index');
+
 
     Route::get('annee', [App\Http\Controllers\Admin\AnneeController::class, 'index'])->name('annee');
     Route::get('annee/create', [App\Http\Controllers\Admin\AnneeController::class, 'create'])->name('annee');
@@ -53,13 +54,44 @@ Route::prefix('admin')->group(function(){
 
     Route::get('enseignants', [App\Http\Controllers\Admin\EnseignantController::class, 'index'])->name('enseignants');
     Route::get('enseignant/create', [App\Http\Controllers\Admin\EnseignantController::class, 'create'])->name('enseignants');
-    Route::post('enseignant/save', [App\Http\Controllers\Admin\EnseignantController::class, 'store'])->name('enseignants');
+    Route::post('ensegnant/create', [App\Http\Controllers\Admin\EnseignantController::class, 'store'])->name('enseignants.index');
+    Route::get('edit-enseignant/{enseignant_id}', [App\Http\Controllers\Admin\EnseignantController::class, 'edit']);
+    Route::put('update-enseignant/{enseignant_id}', [App\Http\Controllers\Admin\EnseignantController::class, 'update']);
 
 
     Route::get('parents', [App\Http\Controllers\Admin\ParentController::class, 'index'])->name('parents');
+    Route::get('parents/create', [App\Http\Controllers\Admin\ParentController::class, 'create'])->name('parents.create');
+    Route::post('parents/create', [App\Http\Controllers\Admin\ParentController::class, 'store'])->name('parents.index');
+
+    // Route::get('secretaires', [App\Http\Controllers\Admin\SecretaireController::class, 'index'])->name('secretaires');
+    // Route::get('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'create'])->name('secretaires');
+    // Route::post('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'store'])->name('secretaires.index');
+
+
+
+    Route::get('inscrit', [App\Http\Controllers\Admin\SignupController::class, 'index'])->name('admin.signup');
+    Route::get('edit-eleve/{eleve_id}', [App\Http\Controllers\Admin\SignupController::class, 'edit'])->name('admin.signup.edit');
+    Route::put('inscrit/{inscrit_id}', [App\Http\Controllers\Admin\SignupController::class, 'update'])->name('admin.signup.index');
+
+
 
     Route::get('mon-profile', [App\Http\Controllers\Profile\UserController::class, 'index'] )->name('mon-profile');
     Route::post('my-profile-update', [App\Http\Controllers\Profile\UserController::class, 'store'] )->name('mon-profile');
+
+
+    Route::get('matieres', [App\Http\Controllers\Admin\MatiereController::class, 'index'])->name('matieres');
+    Route::post('matieres/create', [App\Http\Controllers\Admin\MatiereController::class, 'store'])->name('matieres.index');
+    Route::post('edit-matieres', [App\Http\Controllers\Admin\MatiereController::class, 'store'])->name('matieres.index');
+
+    Route::post('delete-matieres', [App\Http\Controllers\Admin\MatiereController::class, 'destroy'])->name('matieres.index');
+
+
+    Route::get('calendrier/index', [App\Http\Controllers\Admin\CalendrierController::class, 'index'])->name('calendrier.index');
+    Route::post('calendrier', [App\Http\Controllers\Admin\CalendrierController::class, 'store'])->name('calendrier.store');
+    Route::patch('calendrier/update/{id}', [App\Http\Controllers\Admin\CalendrierController::class, 'update'])->name('calendrier.update');
+
+
+
 
     
 });
@@ -75,9 +107,13 @@ Route::prefix('parent')->group(function(){
 
     Route::get('dashboard', [App\Http\Controllers\Parent\DashboardController::class, 'index'])->name('parent.dashboard');
 
-    Route::get('signup', [App\Http\Controllers\Parent\SignupController::class, 'index'])->name('signup');
-    Route::get('signup/create', [App\Http\Controllers\Parent\SignupController::class, 'create'])->name('signup');
-    Route::post('signup/create', [App\Http\Controllers\Parent\SignupController::class, 'store'])->name('signup');
+    Route::get('signup', [App\Http\Controllers\Parent\SignupController::class, 'index']);
+    Route::get('signup-create', [App\Http\Controllers\Parent\SignupController::class, 'create']);
+    Route::post('signup-create', [App\Http\Controllers\Parent\SignupController::class, 'store']);
+
+    Route::get('edit-eleve/{eleve_id}', [App\Http\Controllers\Parent\SignupController::class, 'edit'])->name('parent.edit');
+    Route::put('signup/{signup-update}', [App\Http\Controllers\Parent\SignupController::class, 'update'])->name('parents.signup');
+
 
 });
 
@@ -87,7 +123,7 @@ Route::prefix('parent')->group(function(){
 
 Route::prefix('eleves')->group(function(){
 
-    Route::get('/dashboard', [App\Http\Controllers\secretairesController::class, 'dashboard'])->name('secretaires.dashboaed');
+    Route::get('/dashboard', [App\Http\Controllers\secretairesController::class, 'dashboard'])->name('secretaires.dashboard');
 
 
 

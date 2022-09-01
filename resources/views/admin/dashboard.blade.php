@@ -10,7 +10,7 @@
             <h2>{{$eleves}}</h2>
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Plus de Détails</a>
+                <a class="small text-white stretched-link" href="{{ url('admin/eleves')}}">Plus de Détails</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 <h2>{{$enseignants}}</h2>
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Plus de Détails</a>
+                <a class="small text-white stretched-link" href="{{ url('admin/enseignants')}}">Plus de Détails</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -32,7 +32,7 @@
             <h2>{{$classes}}</h2>
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Plus de Détails</a>
+                <a class="small text-white stretched-link" href="{{ url('admin/classes')}}">Plus de Détails</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <h2>{{$users}}</h2>
             </div>
             <div class="card-footer d-flex align-items-center justify-content-between">
-                <a class="small text-white stretched-link" href="#">Plus de Détails</a>
+                <a class="small text-white stretched-link" href="{{url('admin/secretaires')}}">Plus de Détails</a>
                 <div class="small text-white"><i class="fas fa-angle-right"></i></div>
             </div>
         </div>

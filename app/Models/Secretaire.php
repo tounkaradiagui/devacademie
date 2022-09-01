@@ -10,21 +10,21 @@ class Secretaire extends Model
     use HasFactory;
 
     protected $fillable = [
-        'image',
         'nom',
         'prenom',
         'sexe',
+        'phone',
         'email',
         'adresse',
         'username',
-        'password',
         'user_id',
+        'password',
     ];
     
     
-        public function users()
-        {
-            return $this->belongsTo(User::class,'user_id');
-    
-        }
+    public function users()
+    {
+        return $this->belongsTo(User::class,'user_id');
+
+    }
 }

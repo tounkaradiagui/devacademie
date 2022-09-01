@@ -24,5 +24,20 @@ class Inscription extends Model
         'classe_id',
         'acte',
         'annee',
+        'matricule',
+        'regime',
+        'username',
+        'password',
     ];
+
+    public function niveaux()
+    {
+        return $this->belongsTo(Niveaux::class, 'niveau_id' );
+    }
+
+
+    public function classe()
+    {
+        return $this->belongsTo(Classe::class, 'classe_id' );
+    }
 }

@@ -1,0 +1,221 @@
+            $data = $request->validate(
+            [
+
+                'nom'=>['required','string','max:225'],
+                'prenom'=>['required','string','max:225'],                
+                'sexe'=>['required','string','max:225'],
+                'phone'=>['required','string','max:225'],
+                'email'=>['required','string','email','max:50','unique:users'],
+                'date_dembauche'=>['required'],
+                'adresse'=>['required','string','max:225'],
+                'username'=>['required','string','max:225'],
+                
+            
+            ]);
+
+
+
+
+
+
+            $data = $request->validated();
+
+            $signup = new Enseignant();
+            $signup->nom = $data['nom'];
+            $signup->prenom = $data['prenom'];
+            $signup->sexe = $data['sexe'];
+            $signup->email = $data['email'];
+            $signup->phone = $data['phone'];
+            $signup->date_dembauche = $data['date_dembauche'];
+            $signup->adresse = $data['adresse'];
+            $signup->username = $data['username'];
+            $signup->password = $data['password'];
+            $signup->niveau_id = $data['niveau_id'];
+            $signup->classe_id = $data['classe_id'];
+
+
+
+
+
+            public function rules()
+    {
+
+        $rules = [
+
+            'nom' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'prenom' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'sexe' => [
+                'required',
+            ],
+
+            'email' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'phone' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+           
+            'date_dembauche' => [
+                'required',
+            ],
+
+            'adresse' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'username' => [
+                'required',
+                'string',
+                'max:100'
+            ],
+
+            'password' => [
+                'required',
+                'string',
+                'max:100',
+                'confirmed'
+            ],
+
+            'niveau_id' => 'required',
+
+            'classe_id' =>'required',
+        ];
+
+        return $rules;
+    }
+
+
+    return redirect()
+
+        
+]);
+$matieres = Matiere::all();
+
+$classe = Classe::all();
+$niveau = Niveaux::all();
+$enseignant = Enseignant::all();
+
+$classes = Classe::count();
+$users = User::count();
+$enseignants = Enseignant::count();
+$eleves = Eleve::count();
+return view('admin.matieres.index', compact('matieres', 'niveau', 'classe', 'enseignant', 'eleves', 'enseignants', 'classes', 'users') );
+
+
+
+
+
+    $fileName = time().'.'.$request->image->extension();  
+    $request->image->move(public_path('uploads/secretaire'), $fileName);
+
+
+
+            $secretaires = $request->validate([
+
+            'image' => 'nullable',
+            'nom' => ['required','string','max:225'],
+            'prenom' => ['required','string','max:225'],
+            'sexe' => ['required','string'],
+            'adresse' => ['required','string','max:225'],
+            'phone' => ['required','string','max:50'],
+            'email' => ['required','string','email','max:50','unique:users'],
+            'username' => ['required','string','max:50','unique:secretaires'],
+            'password'=>['required','string'],
+           
+        ]);
+
+        if ($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+
+            $file->move('uploads/secretaire/', $filename);
+            $request->image = $filename;
+        }
+
+
+
+
+
+
+
+
+
+        
+ {{-- Hide content of table --}}
+
+<script>
+    $(document).ready( function () {
+        $('.th_1').hide();
+    });
+</script>
+
+{{-- End of hide --}}
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+    
+    var table = $('#myDataTable').DataTable();
+    
+    
+    table.on('click','.edit', function() {
+    
+    
+        $tr = $(this).closest('tr');
+        if ($($tr).hasClass('child')){
+            $tr = $tr.prev('.parent');
+        }
+        var data = table.row($tr).data();
+        console.log(data);
+    
+
+        $('#code_matiere').val(data[1]);
+        $('#libelle').val(data[2]);
+        $('#coefficient').val(data[3]);
+        $('#niveau_id').val(data[4]);
+        $('#classe_id').val(data[5]);
+        $('#enseignant_id').val(data[6]);
+       
+        $('#editForm').attr('action', 'admin/edit-matiere'+data[0]);
+        $('#editModal').modal('show');
+    });
+
+    // Start Delete//
+    table.on('click','.delete', function()
+     {
+        $tr = $(this).closest('tr');
+            if ($($tr).hasClass('child'))
+            {
+                $tr = $tr.prev('.parent');
+            }
+
+        var data = table.row($tr).data();
+        console.log(data);
+        $('#deleteForm').attr('action', 'admin.users.index'+data[0]);
+        $('#deleteModal').modal('show');
+    });
+
+  //End Delete//
+
+});
+</script>

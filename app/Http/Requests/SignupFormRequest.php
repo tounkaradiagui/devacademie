@@ -31,6 +31,22 @@ class SignupFormRequest extends FormRequest
                 'nullable',
                 'mimes:jpg,jpeg,png'
             ],
+
+            'matricule' => [
+                'nullable',
+            ],
+
+            'username' => [
+                'nullable',
+            ],
+
+            'password' => [
+                'nullable',
+            ],
+
+            'regime' => [
+                'nullable',
+            ],
             
             'nom' => [
                 'required',

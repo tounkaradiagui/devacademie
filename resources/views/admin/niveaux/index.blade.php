@@ -40,6 +40,45 @@
   <!-- ############# Fin du Modal d'ajout   ############## -->
 
 
+  
+   <!-- ###################  Début Modal pour Modifier une classe    ############################## -->
+
+   <div class="modal fade col-md-12" id="modifier_niveau" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter une classe</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="{{ url('admin/edit-niveau') }}" method="post">
+            @csrf
+            @method('PUT')
+            <div class="modal-body">
+              
+              <div class="container">
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="libelle" class="float-start">Libelle</label><br>
+                    <input type="text" name="libelle" class="form-control mt-3" value="">
+                    @error('libelle') <small class="text-danger">{{$message}}</small>@enderror
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary text-white" data-bs-dismiss="modal">Annuler</button>
+              <button type="submit" class="btn btn-success">Valider</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+   <!-- ###################  Fin  Modal pour Modifier une classe    ############################## -->
+
+
 <div class="card">
     @if (session('message'))
         <div class="alert alert-success" >{{session('massage')}}</div>
@@ -67,7 +106,7 @@
                     <td>{{$nom->niveau}}</td>
 
                     <td>
-                        <a href="{{url('admin/edit-niveau/'.$nom->id)}}"  href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                        <a href="{{url('admin/edit-niveau/'.$nom->id)}}"   data-bs-toggle="modal" data-bs-target="#modifier_niveau" title="modifier les info"><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>
                     <td>
                         <a href="#" value="{{$nom->id}}" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          

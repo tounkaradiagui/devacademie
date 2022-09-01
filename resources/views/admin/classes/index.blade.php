@@ -1,41 +1,131 @@
 @extends('layouts.admin')
 @section('content')
 
-@if (session('message'))
-        <div class="alert alert-success" >{{session('massage')}}</div>
-    @endif
-    <!-- debut de la card  -->
-    <div class="card">
-   
-    <div class="card-header">
 
 
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Launch demo modal
-            </button>
+      <!-- ################### Début  Modal pour ajouter une classe    ############################## -->
 
-             Modal
-             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade col-md-12" id="ajouter_classe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter une classe</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
+                  <form action="{{url('admin/classes/create')}}" method="post">
+                    @csrf
+                    <div class="modal-body">
+                      
+                      <div class="container">
+                        <div class="row">
+
+                          <div class="col-md-12">
+                            <label for="niveau" class="float-start">Niveau</label>
+                            <select name="niveau" class="form-control mt-3">
+                              @foreach ($niveau as $new)
+                                <option value="{{$new->id}}">{{ $new->niveau}}</option>
+                              @endforeach
+                            </select>
+                          </div>
+
+                        </div>
+
+                        <div class="row">
+                          <div class="col-md-12">
+                            <label for="libelle" class="float-start">Libelle</label><br>
+                            <input type="text" name="libelle" class="form-control mt-3">
+                            @error('libelle') <small class="text-danger">{{$message}}</small>@enderror
+                          </div>
+                        </div>
+                      </div>
+                    
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary text-white" data-bs-dismiss="modal">Annuler</button>
+                      <button type="submit" class="btn btn-success">Ajouter</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
 
+   <!-- ###################  Fin du Modal pour ajouter une classe    ############################## -->
 
-    <a href="{{url('admin/annee/create')}}" class="btn btn-primary btn-sm float-start text-white" >Ajouter une classe</a> <a href="{{url('admin/annee/create')}}" class="btn btn-primary btn-sm float-end text-white" >Ajouter une année</a>
+
+
+
+
+   <!-- ###################  Début Modal pour Modifier une classe    ############################## -->
+
+   <div class="modal fade col-md-12" id="modifier_classe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter une classe</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form action="{{ url('admin/edit-classe') }}" method="post">
+            @csrf
+            @method('PUT')
+            <div class="modal-body">
+              
+              <div class="container">
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <label for="niveau" class="float-start">Niveau</label>
+                    <select name="niveau" class="form-control mt-3">
+                      @foreach ($niveau as $new)
+                        <option value="{{$new->id}}">{{ $new->niveau}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="libelle" class="float-start">Libelle</label><br>
+                    <input type="text" name="libelle" class="form-control mt-3" value="">
+                    @error('libelle') <small class="text-danger">{{$message}}</small>@enderror
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary text-white" data-bs-dismiss="modal">Annuler</button>
+              <button type="submit" class="btn btn-success">Modifier</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+   <!-- ###################  Fin  Modal pour Modifier une classe    ############################## -->
+
+   
+    <!-- debut de la card  -->
+    <div class="card">
+    @if (session()->has("success"))
+            <div class="alert alert-success">
+                <h3>{{session()->get('success')}}</h3>
+            </div>           
+        @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul >               
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach              
+            </ul>
+        </div>
+            
+        @endif
+   
+    <div class="card-header">
+      <a href="#" class="btn btn-primary btn-sm float-start text-white" data-bs-toggle="modal" data-bs-target="#ajouter_classe" >Ajouter une classe</a> 
     </div>
     
     <div class="card-body">
@@ -52,10 +142,10 @@
                 @foreach ($classe as $display )
                 <tr>
                     <!-- <td>{{$display->id}}</td>    -->
-                    <td>{{$display->niveau_id}}</td>
+                    <td>{{$display->niveau->niveau}}</td>
                     <td>{{$display->libelle}}</td>
                     <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#modifier_classe" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>
                     <td>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          

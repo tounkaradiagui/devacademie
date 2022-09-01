@@ -22150,7 +22150,7 @@ dl li {
 }
 
 .table.table-borderless {
-  border: none;
+  border:none;
 }
 
 .table.table-borderless tr,
@@ -22608,7 +22608,7 @@ dl li {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-  color: #fff;
+  color: #0050e3;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {

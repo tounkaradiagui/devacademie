@@ -2,12 +2,29 @@
 @section('content')
 
 <div class="card">
+
+@if (session()->has("success"))
+                <div class="alert alert-success">
+                    <h3>{{session()->get('success')}}</h3>
+                </div>           
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul >               
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach              
+                </ul>
+            </div>
+                
+            @endif
     <div class="card-header" style="background-color: #0B6623 ;">
         <h4 style="text-align: center; color: white;">Formulaire de Pré-inscription <a href="{{url('parent/list-signup')}}" class="btn btn-danger float-end text-white btn-sm">retour</a></h4> 
     </div>
 
     <div class="card-body">
-        <form action="{{url('parent/signup/create')}}" method="post" enctype="multipart/form-data">
+        <form action="{{url('parent/signup-create')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="container">
                 <div class="row">
@@ -47,9 +64,7 @@
                             <input type="text" name="localite" class="form-control">
                         </div>
 
-                        <div class="form-group mb-3">
-                            <button type="submit" class="btn btn-sm text-white float-start" style="background-color: #0B6623;" >Soumettre</a>                            
-                        </div>
+                        
 
                     </div>
 
@@ -101,6 +116,41 @@
                             @endforeach
                             </select>
                         </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="" class="float-start mt-4">N° Matricule</label>
+                            <input type="text" name="matricule" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="" class="float-start mt-4">Régime</label>
+                            <input type="text" name="regime" class="form-control" value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="" class="float-start mt-4">Username</label>
+                            <input type="text" name="username" class="form-control" value="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="" class="float-start mt-4">Mot de passe</label>
+                            <input type="password" name="password" class="form-control" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group mb-3">
+                            <button type="submit" class="btn btn-sm text-white float-start" style="background-color: #0B6623;" >Soumettre</a>                            
                     </div>
                 </div>
                 

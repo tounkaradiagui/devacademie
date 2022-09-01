@@ -116,17 +116,17 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="{{asset('uploads/profile/' .Auth::user()->image)}}" alt="profile"/>
-              <span class="nav-profile-name">{{ Auth::user()->name }}</span>
+              <span class="nav-profile-name">{{ Auth::user()->nom }} {{ Auth::user()->prenom }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a href="{{url('admin/mon-profile')}}" class="dropdown-item">
                 <i class="mdi mdi-settings text-primary"></i>
                 Mon Profile
               </a>
-              <a class="dropdown-item">
+              <!-- <a class="dropdown-item">
                 <i class="mdi mdi-settings text-primary"></i>
                 Paramètre
-              </a>
+              </a> -->
               
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

@@ -16,7 +16,7 @@
             </a>
             <div class="collapse" id="signup">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('parent/signup/create')}}">Ajouter candidature </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('parent/signup-create')}}">Ajouter candidature </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{url('parent/signup')}}">Voir candidature</a></li>
               </ul>
             </div>

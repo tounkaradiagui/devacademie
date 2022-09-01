@@ -7,7 +7,7 @@
     <div class="card mt-4">
         <div class="card-header">
             <h4>La liste de parents d'élèves
-                <a href="{{ url('admin/ajouter-reservation')}}" class="btn btn-primary btn-sm text-white float-end" >Ajouter un parent</a>
+                <a href="{{ url('admin/parents/create')}}" class="btn btn-primary btn-sm text-white float-end" >Ajouter un parent</a>
             </h4>
         </div>
 

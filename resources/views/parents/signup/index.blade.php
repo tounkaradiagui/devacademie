@@ -3,13 +3,30 @@
 
 
 <div class="card">
-    @if (session('message'))
-        <div class="alert alert-success" >{{session('massage')}}</div>
+
+@if (session()->has("success"))
+                <div class="alert alert-success">
+                    <h3>{{session()->get('success')}}</h3>
+                </div>           
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul >               
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach              
+                </ul>
+            </div>
+                
+            @endif
+    @if (session('success'))
+        <div class="alert alert-success" >{{session('success')}}</div>
     @endif
     <div class="card-header" style="background-color: #0B6623 ;">
 
            <!-- Button trigger modal -->
-           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Launch demo modal
             </button>
 
@@ -30,7 +47,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
 
         <h4 style="text-align: center; color: white;">La liste de pré-inscriptions </h4> 
@@ -40,7 +57,7 @@
 
 
         <div class="card-body">
-        <table id="myDataTable" class="table table-bordered">
+        <table id="myDataTable" class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Photo</th>
@@ -53,17 +70,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($signup as $display)
-                    
+                @foreach($inscrit as $display)
                 <tr>
-                <td> <img src="{{url('uploads/parent/'.$display->image)}}" alt=""> </td>
+                    <td> <img src="{{url('uploads/parent/'.$display->image)}}" alt=""> </td>
                     <td>{{$display->nom}}</td>
                     <td>{{$display->prenom}}</td>
                     <td>{{$display->niveau_id}}</td>
                     <td>{{$display->classe_id}}</td>
-                    <td> <a href="{{url('uploads/documents/' .$display->acte_de_naissance)}}" download title="acte de naissance" > <i class="material-icons">attachment</i> </a> </td>
+                    <td> <a href="{{url('uploads/documents/' .$display->acte_de_naissance)}}" download title="Télécharger vos documents" > <i class="material-icons">attachment</i> </a> </td>
                     <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="voir les autres info" ><i class="fa fa-eye" style="font-size:20px; color:#0B6623;"></i></a>          
+                        <a href="{{url('parent/edit-eleve/'.$display->id)}}" title="Modifier la candidature" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>
                 </tr>
                 @endforeach

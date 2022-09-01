@@ -44,8 +44,18 @@
             
                 
                 <tr>
-                    <th>id</th>
+                    <th>Photo</th>
+                    <th>N° Matricule</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Sexe</th>
+                    <th>Date de naissance</th>
+                    <th>Lieu de naissance</th>
+                    <th>Adresse</th>
+                    <th>Régime</th>
                     <th>Niveau</th>
+                    <th>Classe</th>
+                    <th>Parent</th>
                     <th colspan="2" >Actions</th>
                 </tr>
             </thead>
@@ -53,8 +63,17 @@
            
                 <tr>
                     <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td> 
                     <td>
                         <a href="#"  href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>

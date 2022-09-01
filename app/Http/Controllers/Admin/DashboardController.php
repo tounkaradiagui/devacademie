@@ -8,6 +8,8 @@ use App\Models\Classe;
 use App\Models\Eleve;
 use App\Models\Enseignant;
 use App\Models\User;
+use App\Models\Inscription;
+use App\Models\Niveaux;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -18,8 +20,13 @@ class DashboardController extends Controller
         $users = User::count();
         $enseignants = Enseignant::count();
         $eleves = Eleve::count();
+        $niveau = Niveaux::all();
         // $annee = Annee::all();
-        return view('admin.dashboard', compact('classes', 'users', 'enseignants', 'eleves'));
+        return view('admin.dashboard', compact('classes', 'users', 'enseignants', 'eleves', 'niveau'));
     }
+    
+
+    
+
     
 }
