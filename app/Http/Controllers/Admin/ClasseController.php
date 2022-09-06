@@ -41,7 +41,7 @@ class ClasseController extends Controller
 
     public function edit($libelle)
     {
-        $classe = Classe::fing($libelle);
+        $classe = Classe::find($libelle);
         return view('admin.classes.index', compact('classe'));
     }
 

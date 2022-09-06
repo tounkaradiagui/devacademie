@@ -15,6 +15,7 @@ class CreateEnseignantsTable extends Migration
     {
         Schema::create('enseignants', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
             $table->string('nom');
             $table->string('prenom');
             $table->string('sexe');
@@ -41,6 +42,13 @@ class CreateEnseignantsTable extends Migration
             $table->timestamps();
         });
     }
+
+
+
+
+
+
+
 
     /**
      * Reverse the migrations.

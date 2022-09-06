@@ -968,7 +968,7 @@
   }
 }
 
-@-o-keyframes tada {
+/* @-o-keyframes tada {
   0% {
     -webkit-transform: scale(1, 1);
     -moz-transform: scale(1, 1);
@@ -1046,7 +1046,7 @@
     -o-transform: scale(1) rotate(0);
     transform: scale(1) rotate(0);
   }
-}
+} */
 
 @-ms-keyframes tada {
   0% {
@@ -13450,9 +13450,9 @@ fieldset:disabled .btn {
 .page-link {
   position: relative;
   display: block;
-  color: #0d6efd;
+  color: #0050e3;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #0050e3;
   border: 1px solid #dee2e6;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -13466,7 +13466,7 @@ fieldset:disabled .btn {
 .page-link:hover {
   z-index: 2;
   color: #0a58ca;
-  background-color: #e9ecef;
+  background-color: #0050e3;
   border-color: #dee2e6;
 }
 

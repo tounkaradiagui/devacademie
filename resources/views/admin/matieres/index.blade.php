@@ -6,7 +6,7 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color:#0B6623">
+                    <div class="modal-header" style="background-color: #0050e3;">
                         <h5 class="modal-title text-white" id="exampleModalLabel">Renseigner ces champs svp !</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -96,7 +96,7 @@
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header" style="background-color:#0B6623">
+                    <div class="modal-header" style="background-color: #0050e3;">
                         <h5 class="modal-title text-white" id="exampleModalLabel">Renseigner ces champs svp !</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -181,7 +181,7 @@
       <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color:#0B6623">
+                        <div class="modal-header" style="background-color: #0050e3;">
                             <h5 class="modal-title text-white" id="exampleModalLabel">Renseigner ces champs svp !</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>

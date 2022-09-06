@@ -172,8 +172,8 @@
         </div>
 
         <div class="card-body">
-            @if (session('message'))
-                <div class="alert alert-success" >{{session('message')}}</div>
+            @if (session('success'))
+                <div class="alert alert-success" >{{session('success')}}</div>
             @endif
 
             <table id="myDataTable" class="table table-bordered">

@@ -16,7 +16,6 @@ class CreateElevesTable extends Migration
         Schema::create('eleves', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
-            $table->string('matricule');
             $table->string('nom');
             $table->string('prenom');
             $table->string('sexe');
@@ -24,9 +23,10 @@ class CreateElevesTable extends Migration
             $table->date('date_de_naissance');
             $table->string('lieu_de_naissance');
             $table->string('adresse');
-            $table->string('regime');
-            $table->string('username');
-            $table->string('password');
+            $table->string('matricule')->nullable();
+            $table->string('username')->nullable();
+            $table->string('password')->nullable();
+            $table->string('regime')->nullable();
             $table->unsignedBigInteger('niveau_id');
             $table->foreign('niveau_id')
                 ->references('id')
@@ -41,6 +41,11 @@ class CreateElevesTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('parent_id');
+            $table->foreign('parent_id')
+                ->references('id')
+                ->on('parents')
                 ->onDelete('cascade');
             $table->timestamps();
         });

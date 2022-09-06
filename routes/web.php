@@ -24,6 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 ################## Début de Groupe fonction de l'administrateur  ########################
 
+Route::get('kalan', [App\Http\Controllers\KalanController::class, 'index'])->name('kalan');
+
 Route::prefix('admin')->group(function(){
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
@@ -60,18 +62,19 @@ Route::prefix('admin')->group(function(){
 
 
     Route::get('parents', [App\Http\Controllers\Admin\ParentController::class, 'index'])->name('parents');
-    Route::get('parents/create', [App\Http\Controllers\Admin\ParentController::class, 'create'])->name('parents.create');
-    Route::post('parents/create', [App\Http\Controllers\Admin\ParentController::class, 'store'])->name('parents.index');
+    Route::get('parents/create', [App\Http\Controllers\Admin\ParentController::class, 'create'])->name('admin.parents.create');
+    Route::post('parents/create', [App\Http\Controllers\Admin\ParentController::class, 'store'])->name('admin.parents.index');
 
-    // Route::get('secretaires', [App\Http\Controllers\Admin\SecretaireController::class, 'index'])->name('secretaires');
-    // Route::get('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'create'])->name('secretaires');
-    // Route::post('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'store'])->name('secretaires.index');
+    Route::get('secretaires', [App\Http\Controllers\Admin\SecretaireController::class, 'index'])->name('secretaires');
+    Route::get('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'create'])->name('secretaires');
+    Route::post('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'store'])->name('secretaires.index');
 
 
 
     Route::get('inscrit', [App\Http\Controllers\Admin\SignupController::class, 'index'])->name('admin.signup');
-    Route::get('edit-eleve/{eleve_id}', [App\Http\Controllers\Admin\SignupController::class, 'edit'])->name('admin.signup.edit');
-    Route::put('inscrit/{inscrit_id}', [App\Http\Controllers\Admin\SignupController::class, 'update'])->name('admin.signup.index');
+    Route::post('inscrit', [App\Http\Controllers\Admin\SignupController::class, 'store'])->name('admin.signup.index');
+    Route::get('edit-candidat/{id}', [App\Http\Controllers\Admin\SignupController::class, 'edit'])->name('admin.signup.edit');
+    Route::put('inscrit/{id}', [App\Http\Controllers\Admin\SignupController::class, 'update'])->name('admin.signup.edit');
 
 
 
@@ -89,6 +92,11 @@ Route::prefix('admin')->group(function(){
     Route::get('calendrier/index', [App\Http\Controllers\Admin\CalendrierController::class, 'index'])->name('calendrier.index');
     Route::post('calendrier', [App\Http\Controllers\Admin\CalendrierController::class, 'store'])->name('calendrier.store');
     Route::patch('calendrier/update/{id}', [App\Http\Controllers\Admin\CalendrierController::class, 'update'])->name('calendrier.update');
+
+    Route::get('findStudent', [App\Http\Controllers\Admin\SignupController::class, 'findStudentConfirmed'])->name('admin.signup.index');
+
+
+    
 
 
 
@@ -110,6 +118,11 @@ Route::prefix('parent')->group(function(){
     Route::get('signup', [App\Http\Controllers\Parent\SignupController::class, 'index']);
     Route::get('signup-create', [App\Http\Controllers\Parent\SignupController::class, 'create']);
     Route::post('signup-create', [App\Http\Controllers\Parent\SignupController::class, 'store']);
+
+    
+    Route::get('mon-profile', [App\Http\Controllers\Profile\UserController::class, 'index'] )->name('mon-profile');
+    Route::post('my-profile-update', [App\Http\Controllers\Profile\UserController::class, 'store'] )->name('mon-profile');
+
 
     Route::get('edit-eleve/{eleve_id}', [App\Http\Controllers\Parent\SignupController::class, 'edit'])->name('parent.edit');
     Route::put('signup/{signup-update}', [App\Http\Controllers\Parent\SignupController::class, 'update'])->name('parents.signup');

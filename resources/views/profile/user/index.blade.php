@@ -1,6 +1,22 @@
 @extends('layouts.admin')
 @section('content')
 <section class="py-5">
+    @if (session()->has("success"))
+        <div class="alert alert-success">
+            <h3>{{session()->get('success')}}</h3>
+        </div>           
+        @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul >               
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach              
+            </ul>
+        </div>
+                
+     @endif
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -13,7 +29,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Nom complet</label>
-                                        <input type="text" class="form-control" name="name" value="{{ Auth::user()->name}}">
+                                        <input type="text" class="form-control" name="name" value="{{ Auth::user()->nom }} {{ Auth::user()->prenom }}">
                                     </div>
                                 </div>
 

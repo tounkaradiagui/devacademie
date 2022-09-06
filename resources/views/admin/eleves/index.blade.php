@@ -1,48 +1,18 @@
 @extends('layouts.admin')
-
 @section('content')
 
-
-       
 <div class="card">
     @if (session('message'))
         <div class="alert alert-success" >{{session('massage')}}</div>
     @endif
     
     <div class="card-header">
-
-
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Launch demo modal
-            </button>
-
-             Modal
-             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-        La liste de niveaux <a href="{{url('admin/niveaux/create')}}" class="btn btn-primary btn-sm float-end text-white"> Ajouter un niveau</a>
+        La liste des élèves
     </div>
 
     <div class="card-body">
-        <table id="myDataTable" class="table table-bordered">
-            <thead>
-            
-                
+            <table class="table table-bordered">
+              <thead>
                 <tr>
                     <th>Photo</th>
                     <th>N° Matricule</th>
@@ -51,37 +21,35 @@
                     <th>Sexe</th>
                     <th>Date de naissance</th>
                     <th>Lieu de naissance</th>
-                    <th>Adresse</th>
-                    <th>Régime</th>
+                    <th>Parent</th>
+                    <!-- <th>Régime</th>
                     <th>Niveau</th>
                     <th>Classe</th>
-                    <th>Parent</th>
+                    <th>Parent</th> -->
                     <th colspan="2" >Actions</th>
                 </tr>
             </thead>
             <tbody>
-           
+                @foreach ($student as $eleves )
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td> 
-                    <td>
-                        <a href="#"  href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                    <td><img src="{{url('uploads/parent/'.$eleves->image)}}" width="60px" height="60px" alt=""> </td>
+                    <td>{{$eleves->matricule}}</td>
+                    <td>{{$eleves->nom}}</td>
+                    <td>{{$eleves->prenom}}</td>
+                    <td>{{$eleves->sexe}}</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+                    <td>{{$eleves->date_de_naissance}}</td>
+                    <td>{{$eleves->lieu_de_naissance}}</td>
+                    <td>{{$eleves->signupes->nom}}</td>
+                    <!-- <td>{{$eleves->regime}}</td>
+                    <td>{{$eleves->niveaux->niveau}}</td>
+                    <td>{{$eleves->classe->libelle}}</td>
+                    <td>{{$eleves->parent}}</td> -->
+                    <td class="text-center">
+                        <a href="#" title="Voir les détails" ><i class="fa fa-edit " style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>
-                    <td>
-                        <a href="#" value="" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          
-                    </td>
-                
+                   
                 </tr>
+                @endforeach
                     
            
             </tbody>

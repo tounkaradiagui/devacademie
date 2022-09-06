@@ -7,7 +7,7 @@ use App\Http\Requests\MatiereFormRequest;
 use App\Models\Matiere;
 use Illuminate\Http\Request;
 use App\Models\Classe;
-use App\Models\Eleve;
+use App\Models\Inscription;
 use App\Models\User;
 use App\Models\Niveaux;
 use App\Models\Enseignant;
@@ -20,14 +20,14 @@ class MatiereController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
 
         $classe = Classe::all();
         $niveau = Niveaux::all();
         $enseignant = Enseignant::all();
 
         $matieres = Matiere::all();
-        return view('admin.matieres.index', compact('matieres', 'eleves', 'users', 'enseignants', 'classes', 'enseignant', 'niveau', 'classe'));
+        return view('admin.matieres.index', compact('matieres', 'student', 'users', 'enseignants', 'classes', 'enseignant', 'niveau', 'classe'));
     }
 
     public function create()
@@ -57,7 +57,7 @@ class MatiereController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $eleves = Eleve::count();
+        $eleves = Inscription::count();
 
         $matieres = Matiere::all();
         return view('admin.matieres.index', compact('matieres', 'niveau', 'classe', 'enseignant', 'eleves', 'enseignants', 'classes', 'users') );

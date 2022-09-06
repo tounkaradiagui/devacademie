@@ -33,7 +33,7 @@ class NiveauController extends Controller
         $niveau->niveau = $data['niveau'];
 
         $niveau->save();
-        return redirect('admin/niveaux')->with('message', 'Le niveau a été ajouté !');
+        return redirect('admin/niveaux')->with('success', 'Le niveau a été ajouté !');
         
     }
 
@@ -54,7 +54,7 @@ class NiveauController extends Controller
         $niveau->update();
 
 
-        return redirect('admin/niveaux')->with('message', 'le niveau a été modifié avec succès');
+        return redirect('admin/niveaux')->with('success', 'le niveau a été modifié avec succès');
 
     }
 
@@ -64,12 +64,12 @@ class NiveauController extends Controller
         if($niveau)
         {
             $niveau->delete();
-            return redirect('admin/niveaux')->with('message', 'Le niveau a été supprimer');
+            return redirect('admin/niveaux')->with('success', 'Le niveau a été supprimer');
 
         }
         else
         {
-            return redirect('admin/niveaux')->with('message', 'Aucun niveau trouvé');
+            return redirect('admin/niveaux')->with('success', 'Aucun niveau trouvé');
 
         }
     }

@@ -3,6 +3,22 @@
 
 
 <div class="container-fluid px-4">
+@if (session()->has("success"))
+                <div class="alert alert-success">
+                    <h3>{{session()->get('success')}}</h3>
+                </div>           
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul >               
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach              
+                </ul>
+            </div>
+                
+            @endif
 
     <div class="card mt-4">
         <div class="card-header">
@@ -64,7 +80,7 @@
                         <div class="col-md-3 mt-4">
                             <div class="form-group">
                                 <!-- <label for="">Adresse</label> -->
-                                <input type="adresse" class="form-control" name="adresse" placeholder="Lieu de résidence">
+                                <input type="text" class="form-control" name="adresse" placeholder="Lieu de résidence">
                             </div>
                         </div>
                    

@@ -80,16 +80,28 @@
 
 
 <div class="card">
-    @if (session('message'))
-        <div class="alert alert-success" >{{session('massage')}}</div>
-    @endif
-    
+        @if (session()->has("success"))
+                <div class="alert alert-success">
+                    <h3>{{session()->get('success')}}</h3>
+                </div>           
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul >               
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach              
+                </ul>
+            </div>
+                
+        @endif
     <div class="card-header">
         La liste de niveaux <a href="{{url('admin/niveaux/create')}}" class="btn btn-primary btn-sm float-end text-white"> Ajouter un niveau</a>
     </div>
 
     <div class="card-body">
-        <table class="table table-bordered">
+        <table id="myDataTable" class="table table-bordered">
             <thead>
             
                 
@@ -106,7 +118,7 @@
                     <td>{{$nom->niveau}}</td>
 
                     <td>
-                        <a href="{{url('admin/edit-niveau/'.$nom->id)}}"   data-bs-toggle="modal" data-bs-target="#modifier_niveau" title="modifier les info"><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                        <a href="{{url('admin/edit-niveau/'.$nom->id)}}"  title="modifier les info"><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>
                     <td>
                         <a href="#" value="{{$nom->id}}" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          

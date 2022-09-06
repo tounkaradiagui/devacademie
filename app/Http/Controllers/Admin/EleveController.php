@@ -7,18 +7,20 @@ use App\Models\Classe;
 use App\Models\Eleve;
 use App\Models\Enseignant;
 use App\Models\User;
+use App\Models\Inscription;
 use Illuminate\Http\Request;
 
 class EleveController extends Controller
 {
     public function index()
     {
-        $eleve = Eleve::all();
+        
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $eleves = Eleve::count();
-        return view('admin.eleves.index', compact('eleve', 'eleves', 'classes', 'users', 'enseignants'));
+        $student = Inscription::where('statut', 'Eleve')->get();
+        // dd($student);
+        return view('admin.eleves.index', compact('student', 'classes', 'users', 'enseignants'));
     }
 
     public function create()
@@ -81,9 +83,9 @@ class EleveController extends Controller
                             );
                             
                                                     
-                            $eleve = Eleve::all();
+                            $student = Inscription::where('statut', 'Eleve')->get()->count();
                             $classes = classe::all();
-                            return view('admin.secretaire.index', compact('eleve', 'classes'));
+                            return view('admin.secretaire.index', compact('student', 'classes'));
                             
 
                     }

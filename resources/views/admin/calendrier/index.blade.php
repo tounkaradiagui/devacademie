@@ -30,17 +30,17 @@
 <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Booking title</h5>
+      <div class="modal-header text-white" style="background-color: #0050e3;">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un évènement</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control" id="title">
+        <input type="text" class="form-control" placeholder="Saisir le nom de l'évènement" id="title">
         <span id="titleError" class="text-danger"></span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="saveBtn" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" id="saveBtn" class="btn btn-success">Ajouter</button>
       </div>
     </div>
   </div>
@@ -52,10 +52,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <h3 class="text-center mt-5"> Calendrier scolaire</h3>
-                <div class="col-md-11 offset-1 mt-5 mb-5">
-                    <div id="calendrier">
-
+                <div class="card-header" style="background-color: #0050e3;">
+                    <h3 class="text-center mt-4 text-white"> Calendrier scolaire</h3>
+                </div>
+                <div class="card-body" style="background-color: #30c93e;">
+                    <div class="col-md-12">
+                        <div id="calendrier" class="text-white">
+    
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,7 +143,7 @@ integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0Ec
                     data:{start_date, end_date},
                     success:function(response)
                     {   
-                        swal("Good job!", "Evenement mise à jour avec succès", "success");
+                        swal("Félicitations !", "Evenement mise à jour avec succès", "success");
                     },
 
                     error:function(error)

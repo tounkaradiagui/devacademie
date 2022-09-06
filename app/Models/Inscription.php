@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Parent_;
 
 class Inscription extends Model
 {
@@ -12,6 +13,7 @@ class Inscription extends Model
     protected $table = 'inscriptions';
 
     protected $fillable = [
+        
         'image',
         'nom',
         'prenom',
@@ -19,12 +21,14 @@ class Inscription extends Model
         'email',
         'date_de_naissance',
         'lieu_de_naissance',
-        'localite',
+        'adresse',
         'niveau_id',
         'classe_id',
-        'acte',
-        'annee',
+        'annee_id',
+        'parent_id',
+        'acte_de_naissance',
         'matricule',
+        'statut',
         'regime',
         'username',
         'password',
@@ -39,5 +43,11 @@ class Inscription extends Model
     public function classe()
     {
         return $this->belongsTo(Classe::class, 'classe_id' );
+    }
+
+
+    public function Parents()
+    {
+        return $this->hasMany(parents::class, 'parent_id');
     }
 }

@@ -219,3 +219,180 @@ return view('admin.matieres.index', compact('matieres', 'niveau', 'classe', 'ens
 
 });
 </script>
+
+
+
+
+
+
+
+
+// 'matricule'=>['required','string','max:225'],
+        // 'regime'=>['required','string','max:225'],
+        // 'username'=>['required','string','max:225'],
+        // 'password'=>['required','string','min:5'],
+
+
+        // $signup->nom = $validatedData['nom'];
+        // $signup->prenom = $validatedData['prenom'];
+        // $signup->sexe = $validatedData['sexe'];
+        // $signup->email = $validatedData['email'];
+        // $signup->date_de_naissance = $validatedData['date_de_naissance'];
+        // $signup->lieu_de_naissance = $validatedData['lieu_de_naissance'];
+        // $signup->adresse = $validatedData['localite'];
+        // $signup->niveau_id = $validatedData['niveau_id'];
+        // $user->id = $validatedData['parent_id'];
+        // $signup->classe_id = $validatedData['classe_id'];
+        // $signup->annee_id = $validatedData['annee'];
+        // $signup->matricule = $validatedData['matricule'];
+        // $signup->username = $validatedData['username'];
+        // $signup->regime = $validatedData['regime'];
+        // $signup->password = $validatedData['password'];
+
+
+
+        if ($request->hasFile('acte')) {
+            $file = $request->file('acte');
+            
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+            
+            $file->move('uploads/documents/', $filename);
+            $request->acte_de_naissance = $filename;
+            $user = Auth::User();
+        }
+
+
+
+        if($request->hasFile('image')){
+        
+        $file = $request->file('image');
+        $ext = $file->getClientOriginalExtension();
+        $filename =time().'.'.$ext;
+
+        $file->move('uploads/parent/', $filename);
+        $request->image = $filename;
+    }
+
+
+
+
+
+
+
+
+
+
+    public function store(SignupFormRequest $request)
+    {
+        $data = $request->validated();
+
+        $inscrit = new Inscription();
+
+        $user = Auth::User();
+
+        $inscrit->nom = $data['nom'];
+        $inscrit->prenom = $data['prenom'];
+        $inscrit->sexe = $data['sexe'];
+        $inscrit->email = $data['email'];
+        $inscrit->date_de_naissance = $data['date_de_naissance'];
+        $inscrit->lieu_de_naissance = $data['lieu_de_naissance'];
+        $inscrit->adresse = $data['localite'];
+        $inscrit->niveau_id = $data['niveau_id'];
+        $inscrit->classe_id = $data['classe_id'];
+        $inscrit->annee_id = $data['annee'];
+
+
+        if ($request->hasFile('acte')) {
+            $file = $request->file('acte');
+
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+
+            $file->move('uploads/documents/', $filename);
+            $inscrit->acte_de_naissance = $filename;
+        }
+
+
+        if ($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+
+            $file->move('uploads/parent/', $filename);
+            $inscrit->image = $filename;
+        }
+
+            $inscrit->save();
+            return view('parents.signup.index', compact('signup'))->with('success', 'Votre pré-inscription a été reçu avec succès par dev-academie vous aurez un réponse au bout de deux semaines !');
+        
+    }
+
+
+
+    public function update(SignupFormRequest $request, $inscrit_id)
+    {
+        $data = $request->validated();
+
+        $inscrit = Inscription::find($inscrit_id);
+
+        $inscrit->nom = $data['nom'];
+        $inscrit->prenom = $data['prenom'];
+        $inscrit->sexe = $data['sexe'];
+        $inscrit->email = $data['email'];
+        $inscrit->date_de_naissance = $data['date_de_naissance'];
+        $inscrit->lieu_de_naissance = $data['lieu_de_naissance'];
+        $inscrit->adresse = $data['localite'];
+        $inscrit->niveau_id = $data['niveau_id'];
+        $inscrit->classe_id = $data['classe_id'];
+        $inscrit->user_id = $data['parent_id'];
+        $inscrit->annee_id = $data['annee'];
+        $inscrit->matricule = $data['matricule'];
+        $inscrit->username = $data['username'];
+        $inscrit->regime = $data['regime'];
+        $inscrit->password = $data['password'];
+
+
+        if ($request->hasFile('image')) {
+
+            $path = 'uploads/parent/'.$inscrit->image;
+            if (File::exist($path)) {
+                File::delete($path);
+            }
+
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+
+            $file->move('uploads/parent/', $filename);
+            $inscrit->image = $filename;
+        }
+
+        if ($request->hasFile('acte')) {
+
+            $path = 'uploads/documents/'.$inscrit->acte_de_naissance;
+            if (File::exist($path)) {
+                File::delete($path);
+            }
+
+
+            $file = $request->file('acte');
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+
+            $file->move('uploads/documents/', $filename);
+            $inscrit->acte_de_naissance = $filename;
+        }
+
+
+        $eleves = Eleve::count();
+        $enseignants = Enseignant::count();
+        $classes = Classe::count();
+        $users = User::count();
+        
+        $inscrit->update();
+        return view('admin.signup.index', compact('eleves'))->with('success', 'Félicitation ! la candidature a été acceptée');
+
+    }

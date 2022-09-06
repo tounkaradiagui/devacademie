@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\parents;
 use App\Models\Classe;
-use App\Models\Eleve;
+use App\Models\Inscription;
 use App\Models\User;
 use App\Models\Enseignant;
 
@@ -17,9 +17,9 @@ class ParentController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
         $parents = parents::all();
-        return view('admin.parents.index', compact('parents', 'eleves', 'classes', 'users', 'enseignants'));
+        return view('admin.parents.index', compact('parents', 'student', 'classes', 'users', 'enseignants'));
     }
 
     public function create()
@@ -27,9 +27,11 @@ class ParentController extends Controller
         return view('admin.parents.create');
     }
 
-    public function store(Request $request)
+        public function store(Request $request)
     {
-        $parents = $request->validate([
+
+        $data = $request->validate(
+        [
             'nom' => ['required','string','max:225'],
             'prenom' => ['required','string','max:225'],
             'sexe' => ['required','string'],
@@ -37,7 +39,51 @@ class ParentController extends Controller
             'phone' => ['required','string','max:50'],
             'email' => ['required','string','email','max:50','unique:users'],
             'username' => ['required','string','max:50','unique:parents'],
-            'password'=>['required','string','min:5','confirmed'],
+            'password'=>['required','string','min:5'],
+            
         ]);
+
+        if($data)
+        {
+            $users =  User::create(
+                [
+                    'nom' => $request['nom'],
+                    'prenom' => $request['prenom'],
+                    'email' =>$request['email'],
+                    'adresse' =>$request['adresse'],
+                    'phone' =>$request['phone'],
+                    'username'=>$request['username'],
+                    'password' => bcrypt($request['password']),
+                    'statut' => 'parent',
+                ]);
+
+                if($users)
+                {
+                    $parents = parents::create(
+                    [
+                        'user_id' => $users->id,
+                        'nom'=>$request['nom'],
+                        'prenom'=>$request['prenom'],
+                        'sexe'=>$request['sexe'],
+                        'phone'=>$request['phone'],                              
+                        'adresse'=>$request['adresse'],
+                        'email'=>$request['email'],
+                        'username'=>$request['username'],
+                        'password' => bcrypt($request['password']),
+
+                    ]);
+
+                    $parents = parents::all();
+
+                    $classes = Classe::count();
+                    $users = User::count();
+                    $enseignants = Enseignant::count();
+                    $student = Inscription::where('statut', 'Eleve')->get()->count();
+                    
+                    return view('admin.parents.index', compact('enseignants', 'student', 'classes', 'users', 'parents'))->with('success', 'Félicitaion le parent a été ajouté (e) avec succès !');
+                             
+                }
+            }
     }
+    
 }

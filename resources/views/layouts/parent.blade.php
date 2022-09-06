@@ -1,122 +1,123 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dev académie</title>
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- Google Font: Source Sans Pro -->
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/jqvmap/jqvmap.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/daterangepicker/daterangepicker.css')}}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
 
-    <title>{{ config('app.name', 'Dev Académie') }}</title>
+  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
-    <link rel="stylesheet" href="{{asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('admin/vendors/base/vendor.bundle.base.css')}}">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <link rel="stylesheet" href="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
-   
-    <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{{asset('admin/images/dev_logo.png')}}" />
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
-        ]);
-
-        var options = {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  
 </head>
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
 
+<!-- <div class="wrapper"> -->
 
-<div class="container-scroller">
-        @include('layouts.inc.parents.navbar')
+    @include('layouts.inc.parents.navbar')
 
-        <div class="container-fluid page-body-wrapper">
-            @include('layouts.inc.parents.sidebar')
+    
+    
+    @include('layouts.inc.parents.sidebar')
+    
+    
+    <div class="content-wrapper">
+    @include('layouts.inc.parents.header')
 
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    @yield('content')
-                </div>
+    <section class="content">
+      @yield('content')
 
-            </div>
-        </div>
+    </section>
+  </div>
 
+    @include('layouts.inc.parents.footer')
+
+    
 </div>
 
 
-    <script src="{{asset('admin/vendors/base/vendor.bundle.base.js')}}"></script>
 
-    <script src="{{asset('admin/vendors/datatables.net/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
 
-    <script src="{{asset('admin/js/off-canvas.js')}}"></script>
-    <script src="{{asset('admin/js/hoverable-collapse.js')}}"></script>
-    <script src="{{asset('admin/js/template.js')}}"></script>
+     <!-- jQuery -->
+     <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{asset('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+    $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- ChartJS -->
+    <script src="{{asset('admin/plugins/chart.js/Chart.min.js')}}"></script>
+    <!-- Sparkline -->
+    <script src="{{asset('admin/plugins/sparklines/sparkline.js')}}"></script>
+    <!-- JQVMap -->
+    <script src="{{asset('admin/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{{asset('admin/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
+    <!-- daterangepicker -->
+    <script src="{{asset('admin/plugins/moment/moment.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/daterangepicker/daterangepicker.js')}}"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="{{('admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+    <!-- Summernote -->
+    <script src="{{asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    <!-- overlayScrollbars -->
+    <script src="{{asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{asset('admin/dist/js/adminlte.js')}}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
 
-    <script src="{{asset('admin/js/dashboard.js')}}"></script>
-    <script src="{{asset('admin/js/data-table.js')}}"></script>
-    <script src="{{asset('admin/js/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('admin/js/dataTables.bootstrap4.js')}}"></script>
-    
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> 
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+
     <script>
         $(document).ready( function () {
             $('#myDataTable').DataTable();
         });
     </script>
 
-    <!-- <script>
-      $(document).ready(function () {
-          $('#example').DataTable({
-              scrollX: true,
-          });
-      });
-    </script> -->
-
 
     <script>
-      // $(document).ready(function () {
-        // $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        //     $.fn.dataTable.tables({ visible: true, api: true }).columns.adjust();
-        // });
-    
-        // $('table.table').DataTable({
-        //     ajax: '../ajax/data/arrays.txt',
-        //     scrollY: 200,
-        //     scrollCollapse: true,
-        //     paging: false,
-        // });
-    
-        // Apply a search to the second table for the demo
-        // $('#myTable2').DataTable().search('New York').draw();
-    // });
-  </script>
-    
+      $(document).on('click', '#conf', function(){
+        var id= $(this).attr('data-id')
+        $('#id').val('id')
+
+        $('#configModal').modal('show');
+      });
+    </script>
+
 </body>
 </html>

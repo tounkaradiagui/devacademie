@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class SignupFormRequest extends FormRequest
 {
@@ -96,6 +97,11 @@ class SignupFormRequest extends FormRequest
                 'required',
                
             ],
+            
+            'parent_id' => [
+                'required',
+               
+            ],
 
             'acte' => [
                 'required',
@@ -109,6 +115,9 @@ class SignupFormRequest extends FormRequest
                 
             ],
         ];
+
+        $user = Auth::User();
+
 
         return $rules; 
     }

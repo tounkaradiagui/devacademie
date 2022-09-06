@@ -19,13 +19,13 @@ class EnseignantController extends Controller
     {
         
         
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
         $classes = Classe::count();
         $users = User::count();
         $enseignant = Enseignant::count();
         
         $enseignants = Enseignant::all();
-        return view('admin.enseignants.index', compact('enseignant', 'eleves', 'enseignants', 'users', 'classes'));
+        return view('admin.enseignants.index', compact('enseignant', 'student', 'enseignants', 'users', 'classes'));
     }
     
     public function create()
@@ -60,6 +60,7 @@ class EnseignantController extends Controller
             
         ]);
 
+        
         if($data)
         {
             $user =  User::create(
@@ -69,6 +70,7 @@ class EnseignantController extends Controller
                     'email' =>$request['email'],
                     'adresse' => $request['adresse'],
                     'phone' => $request['phone'],
+                    'username' => $request['username'],
                     'password' => bcrypt($request['password']),
                     'statut' => 'enseignant',
                 ]);
@@ -138,7 +140,7 @@ class EnseignantController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignant->update();
-        return view('admin.enseignants.index', compact('enseignants', 'eleves', 'classes', 'users'))->with('message', 'Enseignant a été modifié avec succès');
+        return view('admin.enseignants.index', compact('enseignants', 'eleves', 'classes', 'users'))->with('success', 'Enseignant a été modifié avec succès');
 
     }
 

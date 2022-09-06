@@ -10,6 +10,7 @@ use App\Models\Eleve;
 use App\Models\User;
 use App\Models\Enseignant;
 use App\Models\Inscription;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\SignupFormRequest;
 use App\Models\Niveaux;
@@ -19,162 +20,122 @@ class SignupController extends Controller
     public function index()
     {
         $inscrit = Inscription::all();
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
         $enseignants = Enseignant::count();
         $classes = Classe::count();
         $users = User::count();
         $classe = Classe::all();
         // dd($signup);
-        return view('admin.signup.index', compact('inscrit', 'classe', 'users', 'eleves', 'enseignants', 'classes', 'users'));
+        return view('admin.signup.index', compact('inscrit', 'classe', 'users', 'student', 'enseignants', 'classes', 'users'));
        
     }
 
 
-    // public function index()
-    // {
-    //     $eleves = Eleve::count();
-    //     $enseignants = Enseignant::count();
-    //     $classes = Classe::count();
-    //     $users = User::count();
-    //     $signup = Inscription::all();
-    //     return view('admin.signup.index', compact('signup', 'users', 'eleves', 'enseignants', 'classes'));
-    // }
-
-    // public function valider()
-    // {
-    //     $signup = Inscription::all();
-    //     $eleves = Eleve::count();
-    //     $enseignants = Enseignant::count();
-    //     $classes = Classe::count();
-    //     $users = User::count();
-    //     // dd($signup);
-    //     return view('admin.signup.edit', compact('signup', 'users', 'eleves', 'enseignants', 'classes'));
-       
-    // }
-
-
-    public function store(SignupFormRequest $request)
+    public function store(Request $request)
     {
-        $data = $request->validated();
+        $user = Auth::User();
+        $data = $request->validate(
+            [
+                'nom'=>['required','string','max:225'],
+                'prenom'=>['required','string','max:225'],                
+                'sexe'=>['required','string','max:225'],
+                'email'=>['required','string','email','max:50','unique:users'],
+                'date_de_naissance'=>['required'],
+                'lieu_de_naissance'=>['required','string','max:225'],
+                'localite'=>['required','string','max:225'],
+                'annee'=> 'required',
+                'niveau_id'=> 'required',
+                'classe_id'=> 'required',
+                'acte_de_naissance'=>'required|mimes:pdf|max:5000',
+                'image'=>'required|mimes:jpeg,png,jpg|max:5000',                               
+                
+            ]);
 
-        $inscrit = new Inscription();
-        $inscrit->nom = $data['nom'];
-        $inscrit->prenom = $data['prenom'];
-        $inscrit->sexe = $data['sexe'];
-        $inscrit->email = $data['email'];
-        $inscrit->date_de_naissance = $data['date_de_naissance'];
-        $inscrit->lieu_de_naissance = $data['lieu_de_naissance'];
-        $inscrit->adresse = $data['localite'];
-        $inscrit->niveau_id = $data['niveau_id'];
-        $inscrit->classe_id = $data['classe_id'];
-        $inscrit->annee_id = $data['annee'];
+            if($data)
+            {
+                $filename =time().'.'.$request->acte_de_naissance->extension();
+                $request->acte_de_naissance->move(public_path('uploads/documents'), $filename);
 
+                $filename =time().'.'.$request->image->extension();
+                $request->image->move(public_path('uploads/parent'), $filename);
 
-        if ($request->hasFile('acte')) {
-            $file = $request->file('acte');
+                $user=Auth::user();
 
-            $ext = $file->getClientOriginalExtension();
-            $filename =time().'.'.$ext;
+                $inscrit = Inscription::create(
+                    [
+                        'nom'=>$request['nom'],
+                        'prenom'=>$request['prenom'],                
+                        'sexe'=>$request['sexe'],
+                        'email'=>$request[ 'email'],
+                        'date_de_naissance'=>$request['date_de_naissance'],
+                        'lieu_de_naissance'=>$request['lieu_de_naissance'],
+                        'adresse'=>$request['localite'],
+                        'annee_id'=>$request['annee'],
+                        'niveau_id'=>$request['niveau_id'],
+                        'classe_id'=>$request['classe_id'],
+                        'acte_de_naissance'=>$filename,
+                        'image'=>$filename,
+                        'parent_id'=>$user->id,
+                    ]
+                );
 
-            $file->move('uploads/documents/', $filename);
-            $inscrit->acte_de_naissance = $filename;
-        }
-
-
-        if ($request->hasFile('image'))
-        {
-            $file = $request->file('image');
-
-            $ext = $file->getClientOriginalExtension();
-            $filename =time().'.'.$ext;
-
-            $file->move('uploads/parent/', $filename);
-            $inscrit->image = $filename;
-        }
-
-            $inscrit->save();
-            return view('parents.signup.index', compact('signup'))->with('message', 'Votre pré-inscription a été reçu avec succès par dev-academie vous aurez un réponse au bout de deux semaines !');
-        
+            }
+            
+            return redirect('parents.signup.index')->with('success', ' Félicitations ! Votre pré-inscription a été reçu avec succès par dev-academie vous aurez une réponse au bout de deux semaines !');
     }
 
 
-    public function edit($eleve_id)
+    public function edit($id)
     {
         $niveau = Niveaux::all();
         $classe = Classe::all();
-
-        $classes = Classe::count();
         $annee = Annee::all();
-        $users = User::count();
-        $eleves = Eleve::count();
-        $enseignants = Enseignant::count();
-        $inscrit = Inscription::find($eleve_id);
-        return view('admin.signup.edit', compact('inscrit', 'classe', 'niveau', 'classes', 'annee', 'eleves', 'enseignants', 'users'));
-    }
 
-
-
-    public function update(SignupFormRequest $request, $inscrit_id)
-    {
-        $data = $request->validated();
-
-        $inscrit = Inscription::find($inscrit_id);
-
-        $inscrit->nom = $data['nom'];
-        $inscrit->prenom = $data['prenom'];
-        $inscrit->sexe = $data['sexe'];
-        $inscrit->email = $data['email'];
-        $inscrit->date_de_naissance = $data['date_de_naissance'];
-        $inscrit->lieu_de_naissance = $data['lieu_de_naissance'];
-        $inscrit->adresse = $data['localite'];
-        $inscrit->niveau_id = $data['niveau_id'];
-        $inscrit->classe_id = $data['classe_id'];
-        $inscrit->annee_id = $data['annee'];
-        $inscrit->matricule = $data['matricule'];
-        $inscrit->username = $data['username'];
-        $inscrit->regime = $data['regime'];
-        $inscrit->password = $data['password'];
-
-
-        if ($request->hasFile('image')) {
-
-            $path = 'uploads/parent/'.$inscrit->image;
-            if (File::exist($path)) {
-                File::delete($path);
-            }
-
-            $file = $request->file('image');
-            $ext = $file->getClientOriginalExtension();
-            $filename =time().'.'.$ext;
-
-            $file->move('uploads/parent/', $filename);
-            $inscrit->image = $filename;
-        }
-
-        if ($request->hasFile('acte')) {
-
-            $path = 'uploads/documents/'.$inscrit->acte_de_naissance;
-            if (File::exist($path)) {
-                File::delete($path);
-            }
-
-
-            $file = $request->file('acte');
-            $ext = $file->getClientOriginalExtension();
-            $filename =time().'.'.$ext;
-
-            $file->move('uploads/documents/', $filename);
-            $inscrit->acte_de_naissance = $filename;
-        }
-
-
-        $eleves = Eleve::count();
-        $enseignants = Enseignant::count();
         $classes = Classe::count();
         $users = User::count();
-        
-        $inscrit->update();
-        return view('admin.signup.index', compact('eleves'))->with('success', 'Félicitation ! la candidature a été acceptée');
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $enseignants = Enseignant::count();
+
+        $inscrit = Inscription::findOrfail($id);
+        return view('admin.signup.edit', compact('inscrit', 'classe', 'niveau', 'classes', 'annee', 'student', 'enseignants', 'users'))->with('success', 'votre modification a ete prise en compte.');
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $valide = $request->validate([
+
+            'matricule'=>"required",
+            'regime'=>"required",
+            'username'=>"required",
+            'password'=>"required",
+        ]);
+
+
+        if($valide)
+        {
+            $valide = Inscription::whereId($id)->update(
+                [
+                    'matricule' =>$request['matricule'],
+                    'regime' =>$request['regime'],
+                    'username' =>$request['username'],
+                    'password' =>bcrypt($request['password']),
+                    'statut' => 'eleve',
+                ]
+            );
+        }
+
+        return redirect('admin/inscrit')->with('success', 'Félicitations ! la candidature a été acceptée');
 
     }
+
+    public function findStudentConfirmed()
+    {
+        $studentconfirmed = Inscription::where('statut', 'Eleve')->get();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        // dd($studentconfirmed);
+        return view('admin.eleves.index', compact('studentconfirmed', 'student'));
+    }
+    
+
 }

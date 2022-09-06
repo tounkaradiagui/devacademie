@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Bienvenue sur Dev Académie</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Mamba Bootstrap Template - Index</title>
+  <title>Bienvenue sur Dev Académie</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -58,7 +58,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center" style="background-color:#0E4C92 ;">
+    <header id="header" class="d-flex align-items-center" style="background-color: #0050e3;">
         
     <div class="container d-flex align-items-center" >
 
@@ -196,39 +196,39 @@
         <div class="row no-gutters">
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up">
-            <span>01</span>
-            <h4>La gestion</h4>
-            <p>Gérez facilement les élèves, les parents, les niveaux et classes</p>
+            <span style="color: #0050e3;"> <strong>01</strong></span>
+            <h4><strong>La gestion</strong></h4>
+            <p style="color: #000;">Gérez facilement les élèves, les parents, les niveaux et classes</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="100">
-            <span>02</span>
-            <h4>Statistique</h4>
-            <p>Suivez les performances de votre école grâce au tableau de bord</p>
+            <span style="color: #0050e3;"><strong>02</strong></span>
+            <h4> <strong>Statistique</strong></h4>
+            <p style="color: #000;">Suivez les performances de votre école grâce au tableau de bord</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="200">
-            <span>03</span>
-            <h4>Suivi</h4>
-            <p>Suivez vos dossiers scolaires en détail</p>
+            <span style="color: #0050e3;"> <strong>03</strong></span>
+            <h4> <strong>Suivi</strong></h4>
+            <p style="color: #000;">Suivez vos dossiers scolaires en détail</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="300">
-            <span>04</span>
-            <h4>Repellendus molestiae</h4>
-            <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
+            <span style="color: #0050e3;"><strong>04</strong></span>
+            <h4> <strong>Repellendus molestiae</strong></h4>
+            <p style="color: #000;">Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="400">
-            <span>05</span>
-            <h4>Sapiente Magnam</h4>
-            <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
+            <span style="color: #0050e3;"><strong>05</strong></span>
+            <h4> <strong>Sapiente Magnam</strong></h4>
+            <p style="color: #000;">Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="500">
-            <span>06</span>
-            <h4>Facilis Impedit</h4>
-            <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
+            <span style="color: #0050e3;"><strong>06</strong></span>
+            <h4> <strong>Facilis Impedit</strong> </h4>
+            <p style="color: #000;">Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
           </div>
 
         </div>
@@ -243,34 +243,34 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
-            <div class="count-box">
+            <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="text-white purecounter"></span>
+              <p class="text-white">Happy Clients</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
+            <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-document-folder" style="color: #c042ff;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class=" text-white purecounter"></span>
+              <p class="text-white">Projects</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
-            <div class="count-box">
+            <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-live-support" style="color: #46d1ff;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="text-white purecounter"></span>
+              <p class="text-white">Hours Of Support</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
-            <div class="count-box">
+            <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="text-white purecounter"></span>
+              <p class="text-white">Hard Workers</p>
             </div>
           </div>
 
@@ -481,7 +481,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Our Team</h2>
+          <h2>Notre équipe</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
         </div>
 
@@ -489,10 +489,10 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+              <div class="pic"><img src="assets/img/team/diagui.jpeg" class="img-fluid" alt=""></div>
+              <div class="member-info" style="background-color: #0B6623 ;">
+                <h4>Diagui Tounkara</h4>
+                <span>Président Directeur Général</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -506,7 +506,7 @@
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
+              <div class="member-info" style="background-color: #0B6623 ;">
                 <h4>Sarah Jhonson</h4>
                 <span>Product Manager</span>
                 <div class="social">
@@ -522,7 +522,7 @@
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
+              <div class="member-info" style="background-color: #0B6623 ;">
                 <h4>William Anderson</h4>
                 <span>CTO</span>
                 <div class="social">
@@ -538,7 +538,7 @@
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
+              <div class="member-info" style="background-color: #0B6623 ;">
                 <h4>Amanda Jepson</h4>
                 <span>Accountant</span>
                 <div class="social">
@@ -618,14 +618,14 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Nous contactez</h2>
+          <h2 style="color: #0050e3;" >Nous contactez</h2>
         </div>
 
         <div class="row">
 
           <div class="col-lg-6 d-flex" data-aos="fade-up">
             <div class="info-box">
-              <i class="bx bx-map"></i>
+              <i class="bx bx-map" style="color: #0050e3;" ></i>
               <h3>Notre adresse</h3>
               <p>Faladié Socoro</p>
             </div>
@@ -633,7 +633,7 @@
 
           <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="info-box">
-              <i class="bx bx-envelope"></i>
+              <i class="bx bx-envelope" style="color: #0050e3;" ></i>
               <h3>Nous écrire par mail</h3>
               <p>contact@devacademie.com<br>devdiagui@gmail.com</p>
             </div>
@@ -641,7 +641,7 @@
 
           <div class="col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="info-box ">
-              <i class="bx bx-phone-call"></i>
+              <i class="bx bx-phone-call" style="color: #0050e3;" ></i>
               <h3>Numéro</h3>
               <p>+223 76 29 22 70<br>+223 65 11 64 46</p>
             </div>
@@ -668,7 +668,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Votre message a été envoyé. Merci et bonne journée !</div>
               </div>
-              <div class="text-center"><button type="submit">Envoyer un message</button></div>
+              <div class="text-center" ><button type="submit" style="background-color: #0B6623 ;">Envoyer un message</button></div>
             </form>
           </div>
 
@@ -680,8 +680,8 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
+  <footer id="footer" style="background-color: #0050e3;" >
+    <div class="footer-top" style="background-color: #0B6623 ;">
       <div class="container">
         <div class="row">
 
@@ -719,11 +719,9 @@
             <h4>Newsletter</h4>
             <p>Restez informer de nos nouvelles en vous abonnants à nos newsletters</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Abonnez-vous">
+              <input type="email" name="email"><input type="submit" style="background-color: #0050e3;" value="Abonnez-vous">
             </form>
-
           </div>
-
         </div>
       </div>
     </div>
@@ -737,7 +735,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
-        Designed by <a href="https://bootstrapmade.com/">Diagui TOUNKARA @Simplon.co</a>
+        Designed by <a href="https://bootstrapmade.com/" class="text-white">Diagui TOUNKARA @Simplon.co</a>
       </div>
     </div>
   </footer><!-- End Footer -->

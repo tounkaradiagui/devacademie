@@ -2,9 +2,26 @@
 
 @section('content')
 <div class="container">
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            @if (session()->has("success"))
+                <div class="alert alert-success">
+                    <h3>{{session()->get('success')}}</h3>
+                </div>           
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul >               
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach              
+                </ul>
+            </div>
+                
+        @endif
                 <div class="card-header text-white" style="background-color:#0B6623 ;">{{ __('Inscription') }}</div>
 
                 <div class="card-body">
@@ -46,20 +63,6 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="statut" class="col-md-4 col-form-label text-md-end">{{ __('Statut') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="statut" type="text" class="form-control @error('statut') is-invalid @enderror" name="statut" value="{{ old('statut') }}" required autocomplete="statut">
-
-                                @error('statut')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Secretaire;
 use App\Models\Classe;
-use App\Models\Eleve;
+use App\Models\Inscription;
 use App\Models\User;
 use App\Models\Enseignant;
 use Illuminate\Http\Request;
@@ -17,10 +17,10 @@ class SecretaireController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
 
         $secretaires = Secretaire::all();
-        return view('admin.secretaires.index', compact('secretaires', 'eleves', 'enseignants', 'users', 'classes'));
+        return view('admin.secretaires.index', compact('secretaires', 'student', 'enseignants', 'users', 'classes'));
     }
 
 
@@ -41,7 +41,7 @@ class SecretaireController extends Controller
             'adresse' => ['required','string','max:225'],
             'phone' => ['required','string','max:50'],
             'email' => ['required','string','email','max:50','unique:users'],
-            'username' => ['required','string','max:50','unique:secretaires'],
+            'username' => ['required','string','max:50'],
             'password'=>['required','string'],
             
         ]);
@@ -53,8 +53,9 @@ class SecretaireController extends Controller
                     'nom' => $request['nom'],
                     'prenom' => $request['prenom'],
                     'email' =>$request['email'],
-                    'adresse' => $request['adresse'],
-                    'phone' => $request['phone'],
+                    'adresse' =>$request['adresse'],
+                    'phone' =>$request['phone'],
+                    'username'=>$request['username'],
                     'password' => bcrypt($request['password']),
                     'statut' => 'secretaire',
                 ]);
@@ -80,9 +81,9 @@ class SecretaireController extends Controller
                     $classes = Classe::count();
                     $users = User::count();
                     $enseignants = Enseignant::count();
-                    $eleves = Eleve::count();
+                    $student = Inscription::where('statut', 'Eleve')->get()->count();
                     
-                    return view('admin.secretaires.index', compact('enseignants', 'eleves', 'classes', 'users', 'secretaires'))->with('success', 'Félicitaion !');
+                    return view('admin.secretaires.index', compact('enseignants', 'student', 'classes', 'users', 'secretaires'))->with('success', 'Félicitaion secrétaire ajouté (e) avec succès !');
                              
                 }
             }

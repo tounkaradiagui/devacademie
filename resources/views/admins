@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dev académie</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+
+<!-- <div class="wrapper"> -->
+
+    @include('layouts.inc.secretaires.navbar')
+
+    
+    
+    @include('layouts.inc.secretaires.sidebar')
+    
+    
+    <div class="content-wrapper">
+    @include('layouts.inc.secretaires.header')
+
+    <section class="content">
+      @yield('content')
+
+    </section>
+  </div>
+
+    @include('layouts.inc.secretaires.footer')
+
+    
+</div>
+
+
+
+
+     <!-- jQuery -->
+     <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+    $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+</body>
+</html>
+
+<!-- sidebar -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #0E4C92;">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('admin/dashboard')}}">
+          <i class="mdi mdi-home menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-account menu-icon"></i>
+          <span class="menu-title">Utilisateurs</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/eleves')}}">Elèves</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/enseignants')}}">Enseignants</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/parents')}}">Parents</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/secretaires')}}">Secrétaires</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basicc" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-account menu-icon"></i>
+          <span class="menu-title">Gstion de l'école</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ui-basicc">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/calendrier/index')}}">Emploi du temps</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/niveaux')}}">Niveaux</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/classes')}}">Classes</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/annee')}}">Année Scolaire</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/matieres')}}">Matières</a></li>  
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#basic" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-view-headline menu-icon"></i>
+          <span class="menu-title">Comptabilité</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="basic">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{url('admin/paiement')}}">Paiement</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('admin/versement')}}">Versement</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('admin/caisse')}}">Caisse</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#basice" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-view-headline menu-icon"></i>
+          <span class="menu-title">Inscriptions</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="basice">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{url('admin/inscriptions')}}">Liste des inscriptions</a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('admin/inscrit')}}">Liste des candidatures</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#consulter" aria-expanded="false" aria-controls="ui-basic">
+          <i class="mdi mdi-view-headline menu-icon"></i>
+          <span class="menu-title">Consulter</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="consulter">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/absences')}}">Absences</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/classes')}}">Classes</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('admin/emploi_du_temps')}}">Emploi du temps</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url('admin/about')}}">
+          <i class="mdi mdi-emoticon menu-icon"></i>
+          <span class="menu-title">A propos</span>
+        </a>
+      </li>
+     
+    </ul>
+  </nav>
+
+<!-- fin sidebar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- nav -->
+
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+  <div class="navbar-brand-wrapper d-flex justify-content-center" style="background-color: #0E4C92">
+    <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+      <a class="navbar-brand brand-logo" href="index.html"><img src="images/dev_logo.png" alt="logo" style="width: 52px; height: 52px;" /></a>
+      <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/dev_logo.png" alt="logo"/></a>
+      <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+        <span class="mdi mdi-sort-variant"></span>
+      </button>
+    </div>  
+  </div>
+  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end bg-success">
+  <ul class="navbar-nav mr-lg-4 w-50">
+      <h3 class="justify-content-center">Dashboard Parents</h3>
+      
+  </ul>
+  <ul class="navbar-nav mr-lg-4 w-50">
+      <h5 class="justify-content-center">Année académique : 2021 - 2022  </h5>
+      
+  </ul>
+    
+    <ul class="navbar-nav navbar-nav-right">
+      
+      <li class="nav-item dropdown mr-1">
+        <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+          <i class="mdi mdi-message-text mx-0"></i>
+          <span class="count"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+          <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+          <a class="dropdown-item">
+            <div class="item-thumbnail">
+                <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+            </div>
+            <div class="item-content flex-grow">
+              <h6 class="ellipsis font-weight-normal">David Grey
+              </h6>
+              <p class="font-weight-light small-text text-muted mb-0">
+                The meeting is cancelled
+              </p>
+            </div>
+          </a>
+          <a class="dropdown-item">
+            <div class="item-thumbnail">
+                <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+            </div>
+            <div class="item-content flex-grow">
+              <h6 class="ellipsis font-weight-normal">Tim Cook
+              </h6>
+              <p class="font-weight-light small-text text-muted mb-0">
+                New product launch
+              </p>
+            </div>
+          </a>
+          <a class="dropdown-item">
+            <div class="item-thumbnail">
+                <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+            </div>
+            <div class="item-content flex-grow">
+              <h6 class="ellipsis font-weight-normal"> Johnson
+              </h6>
+              <p class="font-weight-light small-text text-muted mb-0">
+                Upcoming board meeting
+              </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item dropdown mr-4">
+        <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
+          <i class="mdi mdi-bell mx-0"></i>
+          <span class="count"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+          <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+          <a class="dropdown-item">
+            <div class="item-thumbnail">
+              <div class="item-icon bg-success">
+                <i class="mdi mdi-information mx-0"></i>
+              </div>
+            </div>
+            <div class="item-content">
+              <h6 class="font-weight-normal">Application Error</h6>
+              <p class="font-weight-light small-text mb-0 text-muted">
+                Just now
+              </p>
+            </div>
+          </a>
+          <a class="dropdown-item">
+            <div class="item-thumbnail">
+              <div class="item-icon bg-warning">
+                <i class="mdi mdi-settings mx-0"></i>
+              </div>
+            </div>
+            <div class="item-content">
+              <h6 class="font-weight-normal">Settings</h6>
+              <p class="font-weight-light small-text mb-0 text-muted">
+                Private message
+              </p>
+            </div>
+          </a>
+          <a class="dropdown-item">
+            <div class="item-thumbnail">
+              <div class="item-icon bg-info">
+                <i class="mdi mdi-account-box mx-0"></i>
+              </div>
+            </div>
+            <div class="item-content">
+              <h6 class="font-weight-normal">New user registration</h6>
+              <p class="font-weight-light small-text mb-0 text-muted">
+                2 days ago
+              </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item nav-profile dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+          <img src="{{asset('uploads/profile/' .Auth::user()->image)}}" alt="profile"/>
+          <span class="nav-profile-name">{{ Auth::user()->name }}</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <a href="{{url('parent/mon-profile')}}" class="dropdown-item">
+            <i class="mdi mdi-settings text-primary"></i>
+            Mon Profile
+          </a>
+          <a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            <i class="mdi mdi-logout text-primary"></i>
+            {{ __('Déconnexion') }}
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+              @csrf
+          </form>
+        </div>
+      </li>
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+      <span class="mdi mdi-menu"></span>
+    </button>
+  </div>
+</nav>
+<!-- fin -->
+
+
+
+
+<!-- sidebar -->
+<nav class="sidebar sidebar-offcanvas" id="sidebar" style="background-color: #0E4C92;">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="{{url('parent/dashboard')}}">
+        <i class="mdi mdi-home menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#signup" aria-expanded="false" aria-controls="ui-basic">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Inscription</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="signup">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{url('parent/signup-create')}}">Ajouter candidature </a></li>
+          <li class="nav-item"> <a class="nav-link" href="{{url('parent/signup')}}">Voir candidature</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#consulter" aria-expanded="false" aria-controls="ui-basic">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Consulter</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="consulter">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Liste de enseignants</a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Mes paiements</a></li>
+          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Mes Factures</a></li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#basic" aria-expanded="false" aria-controls="ui-basic">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Emploi du temps</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/charts/chartjs.html">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Cours</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/charts/chartjs.html">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Abscenes</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/charts/chartjs.html">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Bulletins</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/charts/chartjs.html">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Notes</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/charts/chartjs.html">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Secrétariat</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/charts/chartjs.html">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Réclamations</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="pages/icons/mdi.html">
+        <i class="mdi mdi-emoticon menu-icon"></i>
+        <span class="menu-title">A propos</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- fin -->

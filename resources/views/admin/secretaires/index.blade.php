@@ -36,9 +36,9 @@
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Sexe</th>
-                        <th>Téléphone</th>
                         <th>Email</th>
                         <th>Adresse</th>
+                        <th>Téléphone</th>
                         
                         <th colspan="2">Actions</th>
                     </tr>

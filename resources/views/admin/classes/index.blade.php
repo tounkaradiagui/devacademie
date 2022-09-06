@@ -106,7 +106,7 @@
 
    
     <!-- debut de la card  -->
-    <div class="card">
+  <div class="card">
     @if (session()->has("success"))
             <div class="alert alert-success">
                 <h3>{{session()->get('success')}}</h3>
@@ -127,35 +127,41 @@
     <div class="card-header">
       <a href="#" class="btn btn-primary btn-sm float-start text-white" data-bs-toggle="modal" data-bs-target="#ajouter_classe" >Ajouter une classe</a> 
     </div>
-    
     <div class="card-body">
-        <table id="myDataTable" class=" table table-responsive table-bordered">
-            <thead>
-              <tr>
-                  <!-- <th>Id</th> -->
-                <th>Niveau</th>
-                <th>Libellé</th>
-                <th colspan="2" >Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($classe as $display )
-                <tr>
-                    <!-- <td>{{$display->id}}</td>    -->
-                    <td>{{$display->niveau->niveau}}</td>
-                    <td>{{$display->libelle}}</td>
-                    <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#modifier_classe" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
-                    </td>
-                    <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+    <div class="container">
+      <div class="row">
+
+            <table id="myDataTable" class=" table table-bordered">
+                <thead>
+                  <tr>
+                      <!-- <th>Id</th> -->
+                    <th>Niveau</th>
+                    <th>Libellé</th>
+                    <th colspan="2" >Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach ($classe as $display )
+                    <tr>
+                        <!-- <td>{{$display->id}}</td>    -->
+                        <td>{{$display->niveau->niveau}}</td>
+                        <td>{{$display->libelle}}</td>
+                        <td>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modifier_classe" title="modifier les info" ><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                        </td>
+                        <td>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal" title="supprimer les info" ><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+            
+      </div>
     </div>
-</div>
+  </div>
 
     <!-- fin de la card -->
 

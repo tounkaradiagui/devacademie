@@ -9,6 +9,7 @@ use App\Models\Annee;
 use App\Models\Enseignant;
 use App\Models\Classe;
 use App\Models\Eleve;
+use App\Models\Niveaux;
 use App\Models\User;
 class AnneeController extends Controller
 {
@@ -20,7 +21,8 @@ class AnneeController extends Controller
         $enseignants = Enseignant::count();
         $eleves = Eleve::count();
         $annee = Annee::all();
-        return view('admin.annee.index', compact('annee', 'eleves', 'classes', 'users', 'enseignants'));
+        $niveau = Niveaux::all();
+        return view('admin.annee.index', compact('annee', 'niveau', 'eleves', 'classes', 'users', 'enseignants'));
     }
 
     
@@ -41,7 +43,7 @@ class AnneeController extends Controller
         $annee->date_de_fin = $data['date_de_fin'];
 
         $annee->save();
-        return redirect('admin/annee')->with('message', 'Annee a été ajouté avec succès !');
+        return redirect('admin/annee')->with('success', 'Annee a été ajouté avec succès !');
         
     }
 }

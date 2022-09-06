@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Models\Classe;
-use App\Models\Eleve;
+use App\Models\Inscription;
 use App\Models\User;
 use App\Models\Enseignant;
 
@@ -14,7 +14,7 @@ class CalendrierController extends Controller
 {
     public function index()
     {
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
@@ -29,7 +29,7 @@ class CalendrierController extends Controller
                 'end' => $booking->end_date,
             ];
         // return $bookings;
-        return view('admin.calendrier.index', compact('events', 'eleves', 'enseignants', 'classes', 'users'));
+        return view('admin.calendrier.index', compact('events', 'student', 'enseignants', 'classes', 'users'));
     }
 
     public function store(Request $request)

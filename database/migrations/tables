@@ -1,0 +1,127 @@
+
+
+// table parents
+
+    // $table->string('nom');
+    // $table->string('prenom');
+    // $table->string('sexe');
+    // $table->string('email');
+    // $table->date('adresse');
+    // $table->string('username');
+    // $table->string('password');
+    // $table->unsignedBigInteger('eleve_id');
+    // $table->foreign('eleve_id')
+    //     ->references('id')
+    //     ->on('eleves')
+    //     ->onDelete('cascade');
+    // $table->unsignedBigInteger('user_id');
+    // $table->foreign('user_id')
+    //     ->references('id')
+    //     ->on('users')
+    //     ->onDelete('cascade');
+
+    // #############
+
+
+    // table inscptions
+
+    //         $table->string('image')->nullable();
+    //         $table->string('nom');
+    //         $table->string('prenom');
+    //         $table->string('sexe');
+    //         $table->string('email');
+    //         $table->date('date_de_naissance');
+    //         $table->string('lieu_de_naissance');
+    //         $table->string('adresse');
+    //         $table->string('matricule')->nullable();
+    //         $table->string('username')->nullable();
+    //         $table->string('password')->nullable();
+    //         $table->string('regime')->nullable();
+    //         $table->unsignedBigInteger('niveau_id');
+    //         $table->foreign('niveau_id')
+    //             ->references('id')
+    //             ->on('niveaux')
+    //             ->onDelete('cascade');
+    //         $table->unsignedBigInteger('classe_id');
+    //         $table->foreign('classe_id')
+    //             ->references('id')
+    //             ->on('classes')
+    //             ->onDelete('cascade');
+    //         $table->unsignedBigInteger('annee_id');
+    //         $table->foreign('annee_id')
+    //             ->references('id')
+    //             ->on('annee_scolaire');
+    //         $table->unsignedBigInteger('user_id');
+    //         $table->foreign('user_id')
+    //                 ->references('id')
+    //                 ->on('parents')
+    //                 ->onDelete('cascade');
+    //         $table->string('acte_de_naissance');
+
+
+    //table eleves
+
+
+            // $table->string('image')->nullable();
+            // $table->string('matricule');
+            // $table->string('nom');
+            // $table->string('prenom');
+            // $table->string('sexe');
+            // $table->string('email');
+            // $table->date('date_de_naissance');
+            // $table->string('lieu_de_naissance');
+            // $table->string('adresse');
+            // $table->string('regime');
+            // $table->string('username');
+            // $table->string('password');
+            // $table->unsignedBigInteger('niveau_id');
+            // $table->foreign('niveau_id')
+            //     ->references('id')
+            //     ->on('niveaux')
+            //     ->onDelete('cascade');
+            // $table->unsignedBigInteger('classe_id');
+            // $table->foreign('classe_id')
+            //     ->references('id')
+            //     ->on('classes')
+            //     ->onDelete('cascade');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade');
+            // $table->unsignedBigInteger('parent_id');
+            // $table->foreign('parent_id')
+            //     ->references('id')
+            //     ->on('parents')
+            //     ->onDelete('cascade');
+
+
+    // tables enseignants
+
+            // $table->string('nom');
+            // $table->string('prenom');
+            // $table->string('sexe');
+            // $table->string('email');
+            // $table->date('date_dembauche');
+            // $table->string('adresse');
+            // $table->string('username');
+            // $table->string('password');
+            // $table->unsignedBigInteger('niveau_id');
+            // $table->foreign('niveau_id')
+            //     ->references('id')
+            //     ->on('niveaux')
+            //     ->onDelete('cascade');
+            // $table->unsignedBigInteger('classe_id');
+            // $table->foreign('classe_id')
+            //     ->references('id')
+            //     ->on('classes')
+            //     ->onDelete('cascade');
+            // $table->unsignedBigInteger('user_id');
+            // $table->foreign('user_id')
+            //     ->references('id')
+            //     ->on('users')
+            //     ->onDelete('cascade'); 
+
+    // table 
+
+    

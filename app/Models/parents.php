@@ -16,8 +16,7 @@ class parents extends Model
         'sexe',
         'email',
         'adresse',
-        'eleve_id',
-        'user_id',
+        'parent_id',
         'username',
         'password',
     ];
@@ -26,6 +25,12 @@ class parents extends Model
     public function users()
     {
         return $this->belongsTo(User::class,'user_id');
+
+    }
+
+    public function signupes()
+    {
+        return $this->belongsTo(Inscription::class,'parent_id');
 
     }
 }

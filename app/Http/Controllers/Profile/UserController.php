@@ -41,6 +41,6 @@ class UserController extends Controller
         }
 
             $user->update();
-            return redirect()->back()->with('message', 'Votre profile a été modifié avec succès !');
+            return redirect()->back()->with('success', 'Votre profile a été modifié avec succès !');
     }
 }
