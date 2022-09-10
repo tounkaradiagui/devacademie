@@ -222,31 +222,29 @@
             @endif
 
     <div class="card mt-4">
-        <div class="card-header">
+        <div class="card-header text-white" style="background-color: #0050e3;">
             <h4>La liste de matières
-                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-sm text-white float-end" >Ajouter une matière</a>
+                <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success btn-sm text-white float-end" >Ajouter une matière</a>
             </h4>
         </div>
 
         <div class="card-body">
         
-            <table id="myDataTable" class="table table-bordered">
-                <thead class="gb-dark">
+            <table id="example1" class="table table-bordered">
+                <thead class="bg-dark text-center">
                     <tr>
-                        <th>Id</th>
                         <th>Code Matière</th>
                         <th>Libellé</th>
                         <th>Coefficient</th>
                         <th>Niveau</th>
                         <th>Classe</th>
                         <th>Enseignant</th>
-                        <th colspan="2">Actions</th>
+                        <th colspan="3">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($matieres as $item)
                     <tr>
-                        <td>{{ $item->id }}</td>
                         <td>{{ $item->code_matiere }}</td>
                         <td>{{ $item->libelle }}</td>
                         <td>{{ $item->coefficient }}</td>
@@ -254,10 +252,15 @@
                         <td>{{ $item->classe->libelle }}</td>
                         <td>{{ $item->enseignant->nom}} {{ $item->enseignant->prenom}}</td>
                         <td>
-                            <a href="#"  data-bs-toggle="modal" data-bs-target="#editModal" title="Modifier cette matière"><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
+                            <a href="{{url('admin/edit-enseignant/'.$item->id)}}" title="Modifier cette matière"><i class="fa fa-edit" style="font-size:20px; color:#30c93e;"></i></a>          
                         </td>
+                        
                         <td>
-                            <a href="#" class=" editbtn deletematierebtn" value="{{$item->id}}" title="Archiver cette matière"><i class="fa fa-trash" style="font-size:20px; color:red;"></i></a>          
+                            <a href="#"  value="" ><i class='fas fa-info-circle' style='font-size:20px;color:#0050e3' title="Détails"></i></a>
+                        </td>
+
+                        <td>
+                            <a href="#" class=" editbtn deletematierebtn" value="{{$item->id}}" title="Archiver cette matière"><i class="fa fa-archive" style="font-size:20px; color:red;"></i></a>          
                         </td>
                         
                     </tr>
@@ -270,7 +273,7 @@
     
 </div>
 
-
+<!-- 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" 
 integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ==" 
@@ -289,7 +292,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" 
  integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" 
- crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 
 

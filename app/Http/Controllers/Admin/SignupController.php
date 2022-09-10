@@ -13,14 +13,18 @@ use App\Models\Inscription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\SignupFormRequest;
+use App\Models\admin;
 use App\Models\Niveaux;
+use App\Models\parents;
 
 class SignupController extends Controller
 {
     public function index()
     {
         $inscrit = Inscription::all();
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+
+
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         $enseignants = Enseignant::count();
         $classes = Classe::count();
         $users = User::count();
@@ -28,6 +32,20 @@ class SignupController extends Controller
         // dd($signup);
         return view('admin.signup.index', compact('inscrit', 'classe', 'users', 'student', 'enseignants', 'classes', 'users'));
        
+    }
+
+
+    public function create()
+    {
+        $niveau = Niveaux::all();
+        $classe = Classe::all();
+        $annee = Annee::all();
+
+        $classes = Classe::count();
+        $users = User::count();
+        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $enseignants = Enseignant::count();
+        return view('admin.signup.create', compact('niveau', 'classe', 'annee', 'classes', 'student', 'enseignants', 'users'));
     }
 
 
@@ -56,10 +74,11 @@ class SignupController extends Controller
                 $filename =time().'.'.$request->acte_de_naissance->extension();
                 $request->acte_de_naissance->move(public_path('uploads/documents'), $filename);
 
-                $filename =time().'.'.$request->image->extension();
-                $request->image->move(public_path('uploads/parent'), $filename);
+                $filenname =time().'.'.$request->image->extension();
+                $request->image->move(public_path('uploads/parent'), $filenname);
 
-                $user=Auth::user();
+                $user=Auth::user(); //current user (utilisateur connecté)
+                $parent = parents::where('user_id', $user->id)->first(); //id de l'admin qui a fait la demande
 
                 $inscrit = Inscription::create(
                     [
@@ -74,14 +93,15 @@ class SignupController extends Controller
                         'niveau_id'=>$request['niveau_id'],
                         'classe_id'=>$request['classe_id'],
                         'acte_de_naissance'=>$filename,
-                        'image'=>$filename,
-                        'parent_id'=>$user->id,
+                        'image'=>$filenname,
+                        'statut'=> 'candidat',
+                        'parent_id'=>$parent->id,
                     ]
                 );
 
             }
             
-            return redirect('parents.signup.index')->with('success', ' Félicitations ! Votre pré-inscription a été reçu avec succès par dev-academie vous aurez une réponse au bout de deux semaines !');
+            return redirect('admin/signup')->with('success', ' Félicitation ! La pré-inscription a bien été reçue par dev-academie le parent sera informé du résultat de la candidature au bout de deux semaines !');
     }
 
 
@@ -131,10 +151,12 @@ class SignupController extends Controller
 
     public function findStudentConfirmed()
     {
-        $studentconfirmed = Inscription::where('statut', 'Eleve')->get();
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $studentconfirmed = Inscription::where('statut', 'eleve')->get();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         // dd($studentconfirmed);
-        return view('admin.eleves.index', compact('studentconfirmed', 'student'));
+
+    $classes = Classe::count();
+        return view('admin.eleves.index', compact('studentconfirmed', 'student', 'classes'));
     }
     
 

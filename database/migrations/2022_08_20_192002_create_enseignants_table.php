@@ -20,6 +20,7 @@ class CreateEnseignantsTable extends Migration
             $table->string('prenom');
             $table->string('sexe');
             $table->string('email');
+            $table->string('phone');
             $table->date('date_dembauche');
             $table->string('adresse');
             $table->string('username');

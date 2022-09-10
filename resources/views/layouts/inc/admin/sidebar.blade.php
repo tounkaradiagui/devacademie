@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #0E4C92">
     <!-- Brand Logo -->
     <a href="{{url('admin/dashboard')}}" class="brand-link">
-      <img src="{{asset('admin/dist/img/AdminLTELogo.png')}}" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('admin/dist/img/dev_logo.png')}}" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Dev académie</span>
     </a>
 
@@ -45,8 +45,68 @@
                 Dashboard
               </p>
             </a>
-           
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Gérer utilisateurs
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/eleves')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Elèves</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/parents')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Parents</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/enseignants')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Enseignants</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/secretaires')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Secrétaires</p>
+                </a>
+              </li>
+              
+
+            </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Inscriptions
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/inscrit')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste de canditatures</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/eleves')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste élèves inscrits</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- </li>
          
             <ul class="nav nav-treeview">
               <li class="nav-item">
@@ -98,10 +158,45 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
 
-          
           <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Module de gestion
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/niveaux')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Niveaux</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/classes')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Classes</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/annee')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Année scolaire</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/matieres')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Matières</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
+          <!-- <li class="nav-iitem">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
@@ -137,13 +232,13 @@
               
 
             </ul>
-          </li>
+          </li> -->
 
           <li class="nav-header">Géstion scolaire</li>
 
           
           <li class="nav-item">
-            <a href="{{url('admin/calendrier/index')}}" class="nav-link">
+            <a href="{{url('admin/calendar/index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Calendrier
@@ -151,12 +246,68 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{url('admin/tables')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                tables
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/graphique')}}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Statistiques
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Module de gestion
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/niveaux')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Niveaux</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/classes')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Classes</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/annee')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Année scolaire</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('admin/matieres')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Matières</p>
+                </a>
+              </li>
+            </ul>
+          </li> -->
+
+          
 
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Gérer
+                Module de gestion
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -228,45 +379,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Envoyer un message</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste de message</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Brouillon</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Inscriptions
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{url('admin/inscrit')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Liste de canditatures</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{url('admin/inscriptions')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Liste des inscriptions</p>
                 </a>
               </li>
             </ul>
@@ -296,13 +423,6 @@
             </ul>
           </li>
           
-          <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>Liste de classes</p>
-            </a>
-          </li>
-
            
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -336,14 +456,14 @@
 
 
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Ressources</p>
             </a>
           </li>
           
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>Documentation scolaire</p>
             </a>

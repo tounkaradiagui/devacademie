@@ -94,44 +94,45 @@
 
           
           <!-- Slide 4 -->
-          <div class="carousel-item active" style="background-image: url('assets/img/slide/quatrième.jpg');">
+          <div class="carousel-item active" style="background-image: url('assets/img/slide/pexe.jpg');">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Bienvenue sur <span>Dev Académie</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">Bienvenue à l'école <span>Dev Académie</span></h2>
                 <!-- <p class="animate__animated animate__fadeInUp">Surveillez vos enfants dépuis chez vous !!!</p> -->
-                <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lire plus</a>
+                <!-- <a href="#" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lire plus</a> -->
               </div>
             </div>
           </div>
           
           <!-- Slide 1 -->
-          <div class="carousel-item " style="background-image: url('assets/img/slide/slide-1.jpg');">
+          <div class="carousel-item " style="background-image: url('assets/img/slide/students.jpg');">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Surveillez vos enfants dépuis chez vous !!!</h2>
-                <h2 class="animate__animated animate__fadeInUp"></h2>
+                <h2 class="animate__animated animate__fadeInDown"></h2>
                 <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lire plus</a> -->
               </div>
             </div>
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url('assets/img/slide/slide-2.jpg');">
+          <div class="carousel-item" style="background-image: url('assets/img/slide/biblo.jpg');">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                <h2 class="animate__animated animate__fadeInDown">Bibliothèque</h2>
+                <p class="animate__animated animate__fadeInUp">
+                  Une bibliothèque ouvert à tous les enfants de l'école Dév Académie
+                </p>
+                <!-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> -->
               </div>
             </div>
           </div>
 
           <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url('assets/img/slide/slide-3.jpg');">
+          <div class="carousel-item" style="background-image: url('assets/img/slide/ok.jpg');">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <h2 class="animate__animated animate__fadeInDown">Jeux de cour de recréation</h2>
+                <p class="animate__animated animate__fadeInUp">La récréation était pour tous un moment de détente. Donc, il est temps de pratiquer les jeux de cour de récréation d’autrefois. Les jeux d’autrefois à l’école ont un rôle important. Ils rythment les journées des élèves.</p>
                 <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
               </div>
             </div>
@@ -284,7 +285,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Services</h2>
+          <h2>Nos partenaires</h2>
         </div>
 
         <div class="row">
@@ -618,7 +619,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2 style="color: #0050e3;" >Nous contactez</h2>
+          <h2 style="color: #0050e3;" >Contactez l'école Dev Académie</h2>
         </div>
 
         <div class="row">

@@ -19,7 +19,7 @@ class EnseignantController extends Controller
     {
         
         
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         $classes = Classe::count();
         $users = User::count();
         $enseignant = Enseignant::count();
@@ -37,7 +37,7 @@ class EnseignantController extends Controller
         //fin foreignkey
         
         $enseignant = Enseignant::all();
-        return view('admin.enseignants.create', compact('niveau', 'classe', 'enseignant'));
+        return view('admin.enseignants.create', compact('niveau', 'classe', 'enseignant'))->with('success', 'Enseignant ajouté avec succès');
     }
 
 
@@ -94,15 +94,8 @@ class EnseignantController extends Controller
 
                     ]);
 
-                    $enseignants = Enseignant::all();
-                    $niveau = Niveaux::all();
-                    $classe = Classe::all();
-                    
-                    $eleves = Eleve::count();
-                    $classes = Classe::count();
-                    $users = User::count();
-                    $enseignant = Enseignant::count();
-                    return view('admin.enseignants.index', compact('enseignants', 'niveau', 'classe', 'eleves', 'classes', 'users', 'enseignant'));
+                   
+                    return redirect('admin/enseignants')->with('success', 'Enseignant ajouté avec succès');
                         
                         
                 }
@@ -134,13 +127,10 @@ class EnseignantController extends Controller
         $enseignant->niveau_id = $request->input('niveau_id');
         $enseignant->classe_id = $request->input('classe_id');
 
-        $enseignants = Enseignant::all();
-        $classe = Classe::all();
-        $eleves = Eleve::count();
-        $classes = Classe::count();
-        $users = User::count();
+       
         $enseignant->update();
-        return view('admin.enseignants.index', compact('enseignants', 'eleves', 'classes', 'users'))->with('success', 'Enseignant a été modifié avec succès');
+
+        return view('admin/enseignants')->with('success', 'Enseignant modifié avec succès');
 
     }
 

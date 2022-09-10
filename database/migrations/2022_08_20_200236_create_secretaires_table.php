@@ -20,6 +20,7 @@ class CreateSecretairesTable extends Migration
             $table->string('prenom');
             $table->string('sexe');
             $table->string('email');
+            $table->string('phone');
             $table->string('adresse');
             $table->string('username');
             $table->string('password');

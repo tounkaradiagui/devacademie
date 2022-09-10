@@ -21,14 +21,14 @@
             @endif
 
     <div class="card mt-4">
-        <div class="card-header">
-            <h4>Renseigner ce formulaire pour ajouter un parents d'élèves
-                <a href="{{ url('admin/parents')}}" class="btn btn-primary btn-sm float-end text-white" >Liste parents</a>
+        <div class="card-header text-white" style="background-color: #0050e3;">
+            <h4 >Renseigner ce formulaire pour ajouter un parents d'élèves
+                <a href="{{ url('admin/parents')}}" class="btn btn-success btn-sm float-end text-white" >Liste parents</a>
             </h4>
         </div>
 
         <div class="card-body">
-            <form action="{{url('admin/parents/create')}}" method="post">
+            <form action="{{route('admin.parents.index')}}" method="post">
                 @csrf
                 <div class="container">
                     <div class="row">
@@ -86,12 +86,6 @@
                    
 
                    
-                        <div class="col-md-3">
-                            <div class="input-group mt-4">
-                                <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" class="form-control" placeholder="Username" name="username" aria-label="Username" aria-describedby="basic-addon1" >
-                            </div>
-                        </div>
 
                         <div class="col-md-3">
                             <div class="input-group mt-4">

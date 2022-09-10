@@ -20,7 +20,7 @@ class MatiereController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
 
         $classe = Classe::all();
         $niveau = Niveaux::all();
@@ -50,17 +50,7 @@ class MatiereController extends Controller
         $essayer->enseignant_id = $data['enseignant_id'];
 
         $essayer->save();
-        $classe = Classe::all();
-        $niveau = Niveaux::all();
-        $enseignant = Enseignant::all();
-
-        $classes = Classe::count();
-        $users = User::count();
-        $enseignants = Enseignant::count();
-        $eleves = Inscription::count();
-
-        $matieres = Matiere::all();
-        return view('admin.matieres.index', compact('matieres', 'niveau', 'classe', 'enseignant', 'eleves', 'enseignants', 'classes', 'users') );
+        return redirect('admin/matieres')->with('success', 'La matière a été ajouté avec succès !');
 
         
     }

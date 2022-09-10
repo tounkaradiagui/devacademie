@@ -1,5 +1,4 @@
 @extends('layouts.parent')
-
 @section('content')
 
 <!-- Main content -->
@@ -11,7 +10,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>23</h3>
+                <h3>{{$classes}}</h3>
 
                 <p>Nombre de classes</p>
               </div>
@@ -26,9 +25,9 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>54<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$candidatparent}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>Nombre d'élèves inscris</p>
+                <p>Nombre d'enfants</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -41,7 +40,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>43</h3>
+                <h3>3</h3>
 
                 <p>Nombre d'enseignants</p>
               </div>
@@ -56,9 +55,9 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>33</h3>
+                <h3>3</h3>
 
-                <p>Nombre d'utilisateurs</p>
+                <p>Nombre d'absences</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>

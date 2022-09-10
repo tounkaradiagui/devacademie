@@ -18,7 +18,7 @@ class EleveController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $student = Inscription::where('statut', 'Eleve')->get();
+        $student = Inscription::where('statut', 'eleve')->get();
         // dd($student);
         return view('admin.eleves.index', compact('student', 'classes', 'users', 'enseignants'));
     }

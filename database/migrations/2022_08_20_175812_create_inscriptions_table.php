@@ -24,6 +24,7 @@ class CreateInscriptionsTable extends Migration
             $table->string('username')->nullable();
             $table->string('password')->nullable();
             $table->string('regime')->nullable();
+            $table->string('statut')->nullable();
             $table->date('date_de_naissance');
             $table->string('lieu_de_naissance');
             $table->string('adresse');

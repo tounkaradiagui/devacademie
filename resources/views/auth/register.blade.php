@@ -2,101 +2,107 @@
 
 @section('content')
 <div class="container">
-
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-            @if (session()->has("success"))
-                <div class="alert alert-success">
-                    <h3>{{session()->get('success')}}</h3>
-                </div>           
-            @endif
-
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul >               
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach              
-                </ul>
-            </div>
-                
+@if (session()->has("success"))
+            <div class="alert alert-success">
+                <h3>{{session()->get('success')}}</h3>
+            </div>           
         @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul >               
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach              
+            </ul>
+        </div>
+            
+        @endif
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
                 <div class="card-header text-white" style="background-color:#0B6623 ;">{{ __('Inscription') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register')}}">
+                    <form action="{{route('parent.register')}}" method="post">
                         @csrf
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 mt-2" >
+                                    <div class="form-group">
+                                        <!-- <label for="">Nom</label> -->
+                                        <input type="text" class="form-control" name="nom" placeholder="Nom">
+                                    </div>
+                                </div>
 
-                        <div class="row mb-3">
-                            <label for="nom" class="col-md-4 col-form-label text-md-end">{{ __('Nom') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="nom" type="text" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom') }}" required autocomplete="nom" autofocus>
-
-                                @error('nom')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="col-md-6 mt-2">
+                                    <div class="form-group">
+                                        <!-- <label for="">Prénom</label> -->
+                                        <input type="text" class="form-control" name="prenom" placeholder="Prénom">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="prenom" class="col-md-4 col-form-label text-md-end">{{ __('Prénom') }}</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="input-group mt-3">
+                                        <label class="input-group-text" for="inputGroupSelect02">Sexe</label>
+                                        <select name="sexe" class="form-select" id="inputGroupSelect02">
+                                            <option selected>-------Selectionner------</option>
+                                            <option value="Masculin">Masculin</option>
+                                            <option value="Féminin">Féminin</option>
+                                        </select>
+                                    </div>
+                                </div>
 
-                            <div class="col-md-6">
-                                <input id="prenom" type="text" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}" required autocomplete="prenom" autofocus>
+                                <div class="col-md-6 mt-3">
+                                    <div class="form-group">
+                                        <!-- <label for="">Email</label> -->
+                                        <input type="email" class="form-control" name="email" placeholder="Adresse email">
+                                    </div>
+                                </div>
 
-                                @error('prenom')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adresse email ') }}</label>
+                            <div class="row">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <div class="col-md-6 mt-4">
+                                    <div class="form-group">
+                                        <!-- <label for="">Email</label> -->
+                                        <input type="text" class="form-control" name="phone" placeholder="Numéro de Téléphone">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mt-4">
+                                    <div class="form-group">
+                                        <!-- <label for="">Adresse</label> -->
+                                        <input type="text" class="form-control" name="adresse" placeholder="Lieu de résidence">
+                                    </div>
+                                </div>
+                        
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
-                        </div>
+                            <div class="row">
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="col-md-6">
+                                    <div class="input-group mt-4">
+                                        <!-- <span for="">@</span> -->
+                                        <input type="password" class="form-control" @error('password') is-invalid @enderror" name="password" placeholder="Mot de passe" required autocomplete="new-password">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group mt-4">
+                                        <!-- <span for="">@</span> -->
+                                        <input type="password" class="form-control" name="password"  placeholder="Confirmer le mot de passe" required autocomplete="new-password">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmer le mot de passe') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Inscrire') }}
-                                </button>
+                            <div class="row">
+                                <div class="col-md-4 float-start mt-4">
+                                    <button type="submit" class="btn btn-primary float-start text-white" >Enregistrer</button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -105,4 +111,5 @@
         </div>
     </div>
 </div>
+
 @endsection

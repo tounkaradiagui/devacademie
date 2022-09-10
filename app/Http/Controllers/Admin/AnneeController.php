@@ -8,7 +8,7 @@ use App\Http\Requests\AnneeFormRequest;
 use App\Models\Annee;
 use App\Models\Enseignant;
 use App\Models\Classe;
-use App\Models\Eleve;
+use App\Models\Inscription;
 use App\Models\Niveaux;
 use App\Models\User;
 class AnneeController extends Controller
@@ -19,10 +19,10 @@ class AnneeController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $eleves = Eleve::count();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         $annee = Annee::all();
         $niveau = Niveaux::all();
-        return view('admin.annee.index', compact('annee', 'niveau', 'eleves', 'classes', 'users', 'enseignants'));
+        return view('admin.annee.index', compact('annee', 'niveau', 'student', 'classes', 'users', 'enseignants'));
     }
 
     

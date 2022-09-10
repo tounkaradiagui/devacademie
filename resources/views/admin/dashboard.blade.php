@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
 
 <!-- Main content -->
@@ -26,7 +25,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{$student}}<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$student}}<sup style="font-size: 20px"></sup></h3>
 
                 <p>Nombre d'élèves inscris</p>
               </div>
@@ -151,5 +150,6 @@
     </section>
     <!-- /.content -->
 
+    
 
 @endsection()

@@ -19,7 +19,7 @@ class DashboardController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         $niveau = Niveaux::all();
         // $annee = Annee::all();
         return view('admin.dashboard', compact('classes', 'student', 'users', 'enseignants', 'niveau'));

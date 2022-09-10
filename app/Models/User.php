@@ -27,6 +27,7 @@ class User extends Authenticatable
         'lieu_de_naissance',
         'phone',
         'image',
+        'parent_id'
 
     ];
 

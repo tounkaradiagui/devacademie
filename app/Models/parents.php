@@ -15,9 +15,9 @@ class parents extends Model
         'prenom',
         'sexe',
         'email',
+        'phone',
         'adresse',
-        'parent_id',
-        'username',
+        'user_id',
         'password',
     ];
 
@@ -28,9 +28,9 @@ class parents extends Model
 
     }
 
-    public function signupes()
+    public function parents()
     {
-        return $this->belongsTo(Inscription::class,'parent_id');
+        return $this->hasMany(Inscription::class,'parent_id');
 
     }
 }

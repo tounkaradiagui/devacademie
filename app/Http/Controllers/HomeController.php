@@ -41,30 +41,41 @@ class HomeController extends Controller
         
         if ($user->statut == 'secretaire')
         {
-            $student = Inscription::where('statut', 'Eleve')->get()->count();
+            $enseignants = Enseignant::count();
+            $users = User::count();
+            $student = Inscription::where('statut', 'eleve')->get()->count();
+            $classes = Classe::count();
+
+            $student = Inscription::where('statut', 'eleve')->get()->count();
             $secretaires = secretaire::Where('user_id', $user->id)->first();
-            return view('secretaires.dashboard', compact('secretaires', 'student'));
+            return view('secretaires.dashboard', compact('secretaires', 'student', 'enseignants', 'users', 'classes'));
         }
 
         elseif ($user->statut == 'parent')
         {
             $enseignants = Enseignant::count();
             $users = User::count();
-            $student = Inscription::where('statut', 'Eleve')->get()->count();
             $classes = Classe::count();
+
             $inscrit = Inscription::all();
 
+            $user=Auth::user(); //current user (utilisateur connecté)
+            $parent = parents::where('user_id', $user->id)->first(); //id du parent qui a fait la demande
+            $candidatparent = Inscription::where('parent_id', $parent->id)->get()->count();
+
+            $student = Inscription::where('parent_id', $parent->id)->get()->count();
+
+
             $parent = parents::Where('user_id', $user->id)->first();
-            return view('parents.dashboard', compact('parent', 'inscrit','student', 'enseignants', 'users', 'classes'));
+            return view('parents.dashboard', compact('parent','student', 'candidatparent','enseignants', 'users', 'classes'));
         }
 
         elseif ($user->statut == 'eleve')
         {
             $enseignants = Enseignant::count();
             $users = User::count();
-            $student = Inscription::where('statut', 'Eleve')->get()->count();
+            $student = Inscription::where('statut', 'eleve')->get()->count();
             $classes = Classe::count();
-            $student = Inscription::where('statut', 'Eleve')->get();
 
             $eleve = Eleve::Where('user_id', $user->id)->first();
             return view('eleves.dashboard', compact('eleve', 'student', 'enseignants', 'users', 'classes'));
@@ -74,8 +85,9 @@ class HomeController extends Controller
         {
             $enseignants = Enseignant::count();
             $users = User::count();
-            $student = Inscription::where('statut', 'Eleve')->get()->count();
+            $student = Inscription::where('statut', 'eleve')->get()->count();
             $classes = Classe::count();
+
             $enseignant = Enseignant::Where('user_id', $user->id)->first();
             return view('enseignants.dashboard', compact('enseignant', 'enseignants', 'student', 'users', 'classes'));
         }
@@ -84,8 +96,9 @@ class HomeController extends Controller
         {
             $enseignants = Enseignant::count();
             $users = User::count();
-            $student = Inscription::where('statut', 'Eleve')->get()->count();
+            $student = Inscription::where('statut', 'eleve')->get()->count();
             $classes = Classe::count();
+            
             return view('admin.dashboard', compact('classes', 'enseignants', 'student', 'users' ));
         }
 

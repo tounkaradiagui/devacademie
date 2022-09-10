@@ -4,12 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dev académie</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Google Font: Source Sans Pro -->
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
@@ -18,8 +17,6 @@
   <link rel="stylesheet" href="{{asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- JQVMap -->
   <link rel="stylesheet" href="{{asset('admin/plugins/jqvmap/jqvmap.min.css')}}">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Daterange picker -->
@@ -31,8 +28,23 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" 
   integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+
+  <link rel="stylesheet" href="{{asset('admin/plugins/fullcalendar/main.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+
+    <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('admin/plugins/fontawesome-free/css/all.min.css')}}">
   
-   
+  <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+
+
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
@@ -46,32 +58,29 @@
     
     
     <div class="content-wrapper">
-    @include('layouts.inc.admin.header')
-
-    <section class="content">
-      @yield('content')
+      @include('layouts.inc.admin.header')
+      
+      <section class="content">
+        @yield('content')
 
     </section>
   </div>
-
-    @include('layouts.inc.admin.footer')
-
-    
+  
+  @include('layouts.inc.admin.footer')
+  
+  
 </div>
 
 
 
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-     <!-- jQuery -->
-     <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{asset('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
     $.widget.bridge('uibutton', $.ui.button)
     </script>
-    <!-- Bootstrap 4 -->
-    <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- ChartJS -->
     <script src="{{asset('admin/plugins/chart.js/Chart.min.js')}}"></script>
     <!-- Sparkline -->
@@ -92,10 +101,16 @@
     <script src="{{asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('admin/dist/js/adminlte.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
+
+
+  
+    <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -103,22 +118,17 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 
-    <script>
-        $(document).ready( function () {
-            $('#myDataTable').DataTable();
-        });
-    </script>
-
-    <script>
-        $(document).on('click', '#conf', function(){
-          var id= $(this).attr('data-id')
-          $('#id').val('id')
-
-          $('#configModal').modal('show');
-        });
-    </script>
-
-
+<!-- jQuery -->
+<script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- jQuery UI -->
+<script src="{{asset('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
+<!-- fullCalendar 2.2.5 -->
+<script src="{{asset('admin/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('admin/plugins/fullcalendar/main.js')}}"></script>
 
 </body>
 </html>

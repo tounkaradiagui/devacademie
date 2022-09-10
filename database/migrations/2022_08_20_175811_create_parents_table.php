@@ -19,8 +19,8 @@ class CreateParentsTable extends Migration
             $table->string('prenom');
             $table->string('sexe');
             $table->string('email');
-            $table->date('adresse');
-            $table->string('username');
+            $table->string('adresse');
+            $table->string('phone');
             $table->string('password');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')

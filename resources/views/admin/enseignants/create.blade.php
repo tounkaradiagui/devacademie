@@ -4,31 +4,31 @@
 
 <div class="container-fluid px-4">
 
-    @if (session()->has("success"))
-        <div class="alert alert-success">
-            <h3>{{session()->get('success')}}</h3>
-        </div>           
-    @endif
-
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul >               
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach              
-        </ul>
-    </div>
-        
-    @endif
-
     <div class="card mt-4">
-        <div class="card-header">
-            <h4>La liste des enseignants
-                <a href="{{ url('admin/enseignants')}}" class="btn btn-primary btn-sm text-white float-end" >Liste enseignant </a>
+        <div class="card-header" style="background-color: #0050e3;">
+            <h4 class="text-white">La liste des enseignants
+                <a href="{{ url('admin/enseignants')}}" class="btn btn-success btn-sm text-white float-end" >Liste enseignant </a>
             </h4>
         </div>
 
         <div class="card-body">
+
+        @if (session()->has("success"))
+                <div class="alert alert-success">
+                    <h3>{{session()->get('success')}}</h3>
+                </div>           
+            @endif
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul >               
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach              
+                </ul>
+            </div>
+                
+            @endif
             <form action="{{url('admin/ensegnant/create')}}" method="post">
                 @csrf
                 <div class="container">

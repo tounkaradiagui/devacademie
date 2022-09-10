@@ -20,7 +20,10 @@
                 
         @endif
     <div class="card-header" style="background-color: #0050e3;">
-        <h4 style="text-align: center; color: white;">Formulaire de Pré-inscription <a href="{{url('parent/list-signup')}}" class="btn btn-danger float-end text-white btn-sm">retour</a></h4> 
+    <h4 style="text-align: center; color: white;"> <marquee behavior="" direction="">
+            <h6 class="text-white">Veuillez vérifier attentivement les informations saisies avant d'envoyer la candidature. Une fois envoyées, vous ne pourrez plus les modifier.</h6>
+        </marquee>
+        <!-- <a href="{{url('parent/list-signup')}}" class="btn btn-danger float-end text-white btn-sm">retour</a> -->
     </div>
 
     <div class="card-body">

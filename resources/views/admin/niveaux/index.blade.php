@@ -4,16 +4,16 @@
 
 <!-- ############# Début du Modal d'ajout   ############## -->
 
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="ajouter_niveau" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ajouter un niveau</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header text-white" style="background-color: #0050e3;">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter un niveau</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
             
-                <form action= "{{ URL('admin/niveaux') }}" method="POST">
+                <form action= "{{url('admin/niveaux/create')}}" method="POST">
                     @csrf
 
                     <div class="modal-body">
@@ -26,16 +26,14 @@
                     </div>
                     
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Annuler</button>
+                        <button type="submit" class="btn btn-success">Enregistrer</button>
                     </div>
                 </form>
-
             </div>
-       
         </div>
     </div>
-</div> -->
+</div>
 
   <!-- ############# Fin du Modal d'ajout   ############## -->
 
@@ -46,8 +44,8 @@
    <div class="modal fade col-md-12" id="modifier_niveau" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ajouter une classe</h5>
+          <div class="modal-header text-white" style="background-color: #0050e3;">
+            <h5 class="modal-title" id="exampleModalLabel">Ajouter un niveau</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <form action="{{ url('admin/edit-niveau') }}" method="post">
@@ -96,17 +94,16 @@
             </div>
                 
         @endif
-    <div class="card-header">
-        La liste de niveaux <a href="{{url('admin/niveaux/create')}}" class="btn btn-primary btn-sm float-end text-white"> Ajouter un niveau</a>
+    <div class="card-header text-white" style="background-color: #0050e3;">
+        La liste de niveaux <a href="#" class="btn btn-success btn-sm float-end text-white" data-bs-toggle="modal" data-bs-target="#ajouter_niveau" > Ajouter un niveau</a>
     </div>
 
     <div class="card-body">
-        <table id="myDataTable" class="table table-bordered">
+        <table id="example1" class="table table-bordered">
             <thead>
             
                 
                 <tr>
-                    <th>id</th>
                     <th>Niveau</th>
                     <th colspan="2" >Actions</th>
                 </tr>
@@ -114,9 +111,7 @@
             <tbody>
             @foreach ($niveau as $nom )
                 <tr>
-                    <td>{{$nom->id}}</td>
                     <td>{{$nom->niveau}}</td>
-
                     <td>
                         <a href="{{url('admin/edit-niveau/'.$nom->id)}}"  title="modifier les info"><i class="fa fa-edit" style="font-size:20px; color:#0B6623;"></i></a>          
                     </td>
@@ -155,6 +150,11 @@
             });
         });
     </script>
+
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> 
+ <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 
 
 @endsection()

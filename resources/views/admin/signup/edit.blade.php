@@ -19,10 +19,10 @@
             </div>
                 
             @endif
-    <div class="card-header">
-        <h4 style="text-align: center; color: white;"> <marquee behavior="" direction="">
-                        <h6 class="text-danger">Voulez-vous vraiment validé cette candidature</h6>
-                    </marquee>
+    <div class="card-header text-white" style="background-color: #0050e3;">
+        <h4 class="text-center"> <marquee behavior="" direction="">
+            <h6 class="text-white">Merci de bien vérifier les informations du candidat avant de valider.</h6>
+        </marquee>
     </h4> 
     </div>
 
@@ -31,7 +31,7 @@
             @csrf
             @method('PUT')
             <div class="container">
-                <!-- <div class="row">
+                <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="" class="float-start mt-4">Nom</label>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
 
-                </div> -->
+                </div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">

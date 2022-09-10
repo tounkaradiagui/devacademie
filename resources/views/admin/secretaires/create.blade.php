@@ -22,9 +22,9 @@
             </div>
                 
             @endif
-        <div class="card-header">
+        <div class="card-header text-white" style="background-color: #0050e3;">
             <h4>Renseigner ce formulaire pour ajouter un (e) secrétaire
-                <a href="{{ url('admin/secretaires')}}" class="btn btn-primary btn-sm float-end text-white" >Liste secrétaires</a>
+                <a href="{{ url('admin/secretaires')}}" class="btn btn-success btn-sm float-end text-white" >Liste secrétaires</a>
             </h4>
         </div>
 

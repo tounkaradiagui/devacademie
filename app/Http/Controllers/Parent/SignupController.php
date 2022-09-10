@@ -8,6 +8,7 @@ use App\Models\Classe;
 use App\Models\Eleve;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\parents;
 use App\Models\Enseignant;
 use App\Models\Inscription;
 use App\Models\Niveaux;
@@ -16,18 +17,19 @@ use Illuminate\Http\Request;
 
 class SignupController extends Controller
 {
-
-    
-
     public function index()
     {
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $user=Auth::user(); //current user (utilisateur connecté)
+        $parent = parents::where('user_id', $user->id)->first(); //id du parent qui a fait la demande
+        $candidatparent = Inscription::where('parent_id', $parent->id)->get();
+        
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         $enseignants = Enseignant::count();
         $classes = Classe::count();
         $users = User::count();
 
-        $inscrit = Inscription::all();
-        return view('parents.signup.index', compact('inscrit', 'student'));
+
+        return view('parents.signup.index', compact('candidatparent', 'student', 'classes', 'enseignants'));
     }
 
     public function create()
@@ -35,8 +37,15 @@ class SignupController extends Controller
         $niveau = Niveaux::all();
         $classe = Classe::all();
         $annee = Annee::all();
-        $inscrit = Inscription::all();
-        return view('parents.signup.create', compact('niveau', 'classe', 'annee', 'inscrit'));
+        
+        $classes = Classe::count();
+        $enseignants = Enseignant::count();
+       
+        $user=Auth::user(); //current user (utilisateur connecté)
+        $parent = parents::where('user_id', $user->id)->first(); //id du parent qui a fait la demande
+        $candidatparent = Inscription::where('parent_id', $parent->id)->get();
+
+        return view('parents.signup.create', compact('niveau', 'classe', 'classes','enseignants', 'annee', 'candidatparent'));
     }
 
     public function store(Request $request)
@@ -67,8 +76,10 @@ class SignupController extends Controller
                 $filenname =time().'.'.$request->image->extension();
                 $request->image->move(public_path('uploads/parent'), $filenname);
 
-                $user=Auth::user();
-
+                $user=Auth::user(); //current user (utilisateur connecté)
+                $parent = parents::where('user_id', $user->id)->first(); //id du parent qui a fait la demande
+                // $candidatparent = Inscription::where('parent_id', $parent->id)->get();
+                // dd($user);
                 $inscrit = Inscription::create(
                     [
                         'nom'=>$request['nom'],
@@ -84,39 +95,34 @@ class SignupController extends Controller
                         'acte_de_naissance'=>$filename,
                         'image'=>$filenname,
                         'statut'=> 'candidat',
-                        'parent_id'=>$user->id,
+                        'parent_id'=>$parent->id,
                     ]
                 );
 
             }
             
-            return redirect('parent/signup')->with('success', ' Félicitations ! Votre pré-inscription a été reçu avec succès vous aurez une réponse au bout de deux semaines !');
+            return redirect('parent/signup')->with('success', ' Félicitation ! Votre pré-inscription a bien été reçue, vous recevrez une réponse au bout de deux semaines!');
 
         
     }
 
 
-    public function edit($eleve_id)
+    public function edit($id)
     {
         $niveau = Niveaux::all();
         $classe = Classe::all();
         $annee = Annee::all();
 
-        $eleves = Eleve::count();
-        $enseignants = Enseignant::count();
-        $classes = Classe::count();
-        $users = User::count();
-
-        $inscrit = Inscription::find($eleve_id);
-        return view('parents.signup.index', compact('inscrit', 'eleves', 'enseignants', 'classes', 'users' ,'niveau', 'classe', 'annee'));
+        $candidatparent = Inscription::find($id);
+        return view('parents.signup.edit', compact('candidatparent', 'niveau', 'classe', 'annee'));
     }
 
 
-    public function update(Request $request, $eleve_id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validated();
 
-        $signup = Inscription::find($eleve_id);
+        $signup = Inscription::find($id);
 
         $signup->nom = $validatedData['nom'];
         $signup->prenom = $validatedData['prenom'];

@@ -48,33 +48,33 @@
            
           </li>
          
-            <ul class="nav nav-treeview">
+            <!-- <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Top Navigation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Top Navigation + Sidebar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Boxed</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Sidebar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Fixed Sidebar <small>+ Custom Area</small></p>
                 </a>
@@ -97,7 +97,7 @@
                   <p>Collapsed Sidebar</p>
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -133,25 +133,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('admin/eleves')}}" class="nav-link">
+                <a href="{{url('parents/emplois')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Emploi du temps</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('admin/parents')}}" class="nav-link">
+                <a href="{{url('parents/list-enseignants')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste des enseignants</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('admin/enseignants')}}" class="nav-link">
+                <a href="{{url('parents/matieres')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste de matières</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('admin/secretaires')}}" class="nav-link">
+                <a href="{{url('parents/absences')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste d'absences</p>
                 </a>
@@ -164,7 +164,7 @@
 
           
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="parents/calendrier" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Voir le Calendrier
@@ -209,19 +209,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href="{{url('parent/mail')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Envoyer un message</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="{{url('parent/messages')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste de message</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
+                <a href="{{url('parent/brouillon')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Brouillon</p>
                 </a>
@@ -231,7 +231,7 @@
 
 
          <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="{{url('parent/bulletins')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Liste de Bulletins</p>
             </a>
@@ -239,7 +239,7 @@
          
           
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="{{url('parent/reclamations')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Liste de reclamations</p>
             </a>
@@ -278,16 +278,16 @@
 
 
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="{{url('parent/ressources')}}" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Ressources</p>
             </a>
           </li>
           
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+            <a href="www.dev-academie.ml" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
-              <p>Documentation scolaire</p>
+              <p>Documentation</p>
             </a>
           </li>
 

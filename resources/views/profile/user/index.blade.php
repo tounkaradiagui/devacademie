@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><h3> Mon profile</h3></div>
+                    <div class="card-header text-white" style="background-color: #0050e3;"><h3> Mon profile</h3></div>
                     <div class="card-body">
                         <form action="{{url('admin/my-profile-update')}}" method="post" enctype="multipart/form-data">
                             @csrf

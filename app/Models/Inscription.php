@@ -46,8 +46,8 @@ class Inscription extends Model
     }
 
 
-    public function Parents()
+    public function parents()
     {
-        return $this->hasMany(parents::class, 'parent_id');
+        return $this->belongsTo(parents::class, 'parent_id');
     }
 }

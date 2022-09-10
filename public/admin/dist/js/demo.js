@@ -60,7 +60,7 @@
   // Checkboxes
 
   $container.append(
-    '<h5>Customize AdminLTE</h5><hr class="mb-2"/>'
+    '<h5>Personnaliser</h5><hr class="mb-2"/>'
   )
 
   var $dark_mode_checkbox = $('<input />', {
@@ -75,10 +75,10 @@
       $('body').removeClass('dark-mode')
     }
   })
-  var $dark_mode_container = $('<div />', { class: 'mb-4' }).append($dark_mode_checkbox).append('<span>Dark Mode</span>')
+  var $dark_mode_container = $('<div />', { class: 'mb-4' }).append($dark_mode_checkbox).append('<span> Mode Dark</span>')
   $container.append($dark_mode_container)
 
-  $container.append('<h6>Header Options</h6>')
+  $container.append('<h6>Options Entêtes </h6>')
   var $header_fixed_checkbox = $('<input />', {
     type: 'checkbox',
     value: 1,
@@ -91,7 +91,7 @@
       $('body').removeClass('layout-navbar-fixed')
     }
   })
-  var $header_fixed_container = $('<div />', { class: 'mb-1' }).append($header_fixed_checkbox).append('<span>Fixed</span>')
+  var $header_fixed_container = $('<div />', { class: 'mb-1' }).append($header_fixed_checkbox).append('<span>Fixé</span>')
   $container.append($header_fixed_container)
 
   var $dropdown_legacy_offset_checkbox = $('<input />', {
@@ -106,7 +106,7 @@
       $('.main-header').removeClass('dropdown-legacy')
     }
   })
-  var $dropdown_legacy_offset_container = $('<div />', { class: 'mb-1' }).append($dropdown_legacy_offset_checkbox).append('<span>Dropdown Legacy Offset</span>')
+  var $dropdown_legacy_offset_container = $('<div />', { class: 'mb-1' }).append($dropdown_legacy_offset_checkbox).append('<span>Décalage de la liste déroulante</span>')
   $container.append($dropdown_legacy_offset_container)
 
   var $no_border_checkbox = $('<input />', {
@@ -121,10 +121,10 @@
       $('.main-header').removeClass('border-bottom-0')
     }
   })
-  var $no_border_container = $('<div />', { class: 'mb-4' }).append($no_border_checkbox).append('<span>No border</span>')
+  var $no_border_container = $('<div />', { class: 'mb-4' }).append($no_border_checkbox).append('<span>Enlever bordure</span>')
   $container.append($no_border_container)
 
-  $container.append('<h6>Sidebar Options</h6>')
+  $container.append('<h6>Les Options Sidebar</h6>')
 
   var $sidebar_collapsed_checkbox = $('<input />', {
     type: 'checkbox',
@@ -164,7 +164,7 @@
       $(window).trigger('resize')
     }
   })
-  var $sidebar_fixed_container = $('<div />', { class: 'mb-1' }).append($sidebar_fixed_checkbox).append('<span>Fixed</span>')
+  var $sidebar_fixed_container = $('<div />', { class: 'mb-1' }).append($sidebar_fixed_checkbox).append('<span>Fixé</span>')
   $container.append($sidebar_fixed_container)
 
   var $sidebar_mini_checkbox = $('<input />', {
@@ -179,7 +179,7 @@
       $('body').removeClass('sidebar-mini')
     }
   })
-  var $sidebar_mini_container = $('<div />', { class: 'mb-1' }).append($sidebar_mini_checkbox).append('<span>Sidebar Mini</span>')
+  var $sidebar_mini_container = $('<div />', { class: 'mb-1' }).append($sidebar_mini_checkbox).append('<span>Mini Sidebar </span>')
   $container.append($sidebar_mini_container)
 
   var $sidebar_mini_md_checkbox = $('<input />', {
@@ -194,7 +194,7 @@
       $('body').removeClass('sidebar-mini-md')
     }
   })
-  var $sidebar_mini_md_container = $('<div />', { class: 'mb-1' }).append($sidebar_mini_md_checkbox).append('<span>Sidebar Mini MD</span>')
+  var $sidebar_mini_md_container = $('<div />', { class: 'mb-1' }).append($sidebar_mini_md_checkbox).append('<span> Mini Sidebar MD</span>')
   $container.append($sidebar_mini_md_container)
 
   var $sidebar_mini_xs_checkbox = $('<input />', {
@@ -209,7 +209,7 @@
       $('body').removeClass('sidebar-mini-xs')
     }
   })
-  var $sidebar_mini_xs_container = $('<div />', { class: 'mb-1' }).append($sidebar_mini_xs_checkbox).append('<span>Sidebar Mini XS</span>')
+  var $sidebar_mini_xs_container = $('<div />', { class: 'mb-1' }).append($sidebar_mini_xs_checkbox).append('<span>Mini Sidebar  XS</span>')
   $container.append($sidebar_mini_xs_container)
 
   var $flat_sidebar_checkbox = $('<input />', {
@@ -302,7 +302,7 @@
   var $no_expand_sidebar_container = $('<div />', { class: 'mb-4' }).append($no_expand_sidebar_checkbox).append('<span>Disable Hover/Focus Auto-Expand</span>')
   $container.append($no_expand_sidebar_container)
 
-  $container.append('<h6>Footer Options</h6>')
+  $container.append('<h6> Les Options Footer </h6>')
   var $footer_fixed_checkbox = $('<input />', {
     type: 'checkbox',
     value: 1,
@@ -315,10 +315,10 @@
       $('body').removeClass('layout-footer-fixed')
     }
   })
-  var $footer_fixed_container = $('<div />', { class: 'mb-4' }).append($footer_fixed_checkbox).append('<span>Fixed</span>')
+  var $footer_fixed_container = $('<div />', { class: 'mb-4' }).append($footer_fixed_checkbox).append('<span>Fixé</span>')
   $container.append($footer_fixed_container)
 
-  $container.append('<h6>Small Text Options</h6>')
+  $container.append('<h6>Options de petit texte</h6>')
 
   var $text_sm_body_checkbox = $('<input />', {
     type: 'checkbox',
@@ -332,7 +332,7 @@
       $('body').removeClass('text-sm')
     }
   })
-  var $text_sm_body_container = $('<div />', { class: 'mb-1' }).append($text_sm_body_checkbox).append('<span>Body</span>')
+  var $text_sm_body_container = $('<div />', { class: 'mb-1' }).append($text_sm_body_checkbox).append('<span>Le corps</span>')
   $container.append($text_sm_body_container)
 
   var $text_sm_header_checkbox = $('<input />', {
@@ -397,107 +397,107 @@
 
   // Color Arrays
 
-  var navbar_dark_skins = [
-    'navbar-primary',
-    'navbar-secondary',
-    'navbar-info',
-    'navbar-success',
-    'navbar-danger',
-    'navbar-indigo',
-    'navbar-purple',
-    'navbar-pink',
-    'navbar-navy',
-    'navbar-lightblue',
-    'navbar-teal',
-    'navbar-cyan',
-    'navbar-dark',
-    'navbar-gray-dark',
-    'navbar-gray'
-  ]
+  // var navbar_dark_skins = [
+  //   'navbar-primary',
+  //   'navbar-secondary',
+  //   'navbar-info',
+  //   'navbar-success',
+  //   'navbar-danger',
+  //   'navbar-indigo',
+  //   'navbar-purple',
+  //   'navbar-pink',
+  //   'navbar-navy',
+  //   'navbar-lightblue',
+  //   'navbar-teal',
+  //   'navbar-cyan',
+  //   'navbar-dark',
+  //   'navbar-gray-dark',
+  //   'navbar-gray'
+  // ]
 
-  var navbar_light_skins = [
-    'navbar-light',
-    'navbar-warning',
-    'navbar-white',
-    'navbar-orange'
-  ]
+  // var navbar_light_skins = [
+  //   'navbar-light',
+  //   'navbar-warning',
+  //   'navbar-white',
+  //   'navbar-orange'
+  // ]
 
-  var sidebar_colors = [
-    'bg-primary',
-    'bg-warning',
-    'bg-info',
-    'bg-danger',
-    'bg-success',
-    'bg-indigo',
-    'bg-lightblue',
-    'bg-navy',
-    'bg-purple',
-    'bg-fuchsia',
-    'bg-pink',
-    'bg-maroon',
-    'bg-orange',
-    'bg-lime',
-    'bg-teal',
-    'bg-olive'
-  ]
+  // var sidebar_colors = [
+  //   'bg-primary',
+  //   'bg-warning',
+  //   'bg-info',
+  //   'bg-danger',
+  //   'bg-success',
+  //   'bg-indigo',
+  //   'bg-lightblue',
+  //   'bg-navy',
+  //   'bg-purple',
+  //   'bg-fuchsia',
+  //   'bg-pink',
+  //   'bg-maroon',
+  //   'bg-orange',
+  //   'bg-lime',
+  //   'bg-teal',
+  //   'bg-olive'
+  // ]
 
-  var accent_colors = [
-    'accent-primary',
-    'accent-warning',
-    'accent-info',
-    'accent-danger',
-    'accent-success',
-    'accent-indigo',
-    'accent-lightblue',
-    'accent-navy',
-    'accent-purple',
-    'accent-fuchsia',
-    'accent-pink',
-    'accent-maroon',
-    'accent-orange',
-    'accent-lime',
-    'accent-teal',
-    'accent-olive'
-  ]
+  // var accent_colors = [
+  //   'accent-primary',
+  //   'accent-warning',
+  //   'accent-info',
+  //   'accent-danger',
+  //   'accent-success',
+  //   'accent-indigo',
+  //   'accent-lightblue',
+  //   'accent-navy',
+  //   'accent-purple',
+  //   'accent-fuchsia',
+  //   'accent-pink',
+  //   'accent-maroon',
+  //   'accent-orange',
+  //   'accent-lime',
+  //   'accent-teal',
+  //   'accent-olive'
+  // ]
 
-  var sidebar_skins = [
-    'sidebar-dark-primary',
-    'sidebar-dark-warning',
-    'sidebar-dark-info',
-    'sidebar-dark-danger',
-    'sidebar-dark-success',
-    'sidebar-dark-indigo',
-    'sidebar-dark-lightblue',
-    'sidebar-dark-navy',
-    'sidebar-dark-purple',
-    'sidebar-dark-fuchsia',
-    'sidebar-dark-pink',
-    'sidebar-dark-maroon',
-    'sidebar-dark-orange',
-    'sidebar-dark-lime',
-    'sidebar-dark-teal',
-    'sidebar-dark-olive',
-    'sidebar-light-primary',
-    'sidebar-light-warning',
-    'sidebar-light-info',
-    'sidebar-light-danger',
-    'sidebar-light-success',
-    'sidebar-light-indigo',
-    'sidebar-light-lightblue',
-    'sidebar-light-navy',
-    'sidebar-light-purple',
-    'sidebar-light-fuchsia',
-    'sidebar-light-pink',
-    'sidebar-light-maroon',
-    'sidebar-light-orange',
-    'sidebar-light-lime',
-    'sidebar-light-teal',
-    'sidebar-light-olive'
-  ]
+  // var sidebar_skins = [
+  //   'sidebar-dark-primary',
+  //   'sidebar-dark-warning',
+  //   'sidebar-dark-info',
+  //   'sidebar-dark-danger',
+  //   'sidebar-dark-success',
+  //   'sidebar-dark-indigo',
+  //   'sidebar-dark-lightblue',
+  //   'sidebar-dark-navy',
+  //   'sidebar-dark-purple',
+  //   'sidebar-dark-fuchsia',
+  //   'sidebar-dark-pink',
+  //   'sidebar-dark-maroon',
+  //   'sidebar-dark-orange',
+  //   'sidebar-dark-lime',
+  //   'sidebar-dark-teal',
+  //   'sidebar-dark-olive',
+  //   'sidebar-light-primary',
+  //   'sidebar-light-warning',
+  //   'sidebar-light-info',
+  //   'sidebar-light-danger',
+  //   'sidebar-light-success',
+  //   'sidebar-light-indigo',
+  //   'sidebar-light-lightblue',
+  //   'sidebar-light-navy',
+  //   'sidebar-light-purple',
+  //   'sidebar-light-fuchsia',
+  //   'sidebar-light-pink',
+  //   'sidebar-light-maroon',
+  //   'sidebar-light-orange',
+  //   'sidebar-light-lime',
+  //   'sidebar-light-teal',
+  //   'sidebar-light-olive'
+  // ]
 
   // Navbar Variants
 
-  $container.append('<h6>Navbar Variants</h6>')
+  // $container.append('<h6>Navbar Variants</h6>')
 
   var $navbar_variants = $('<div />', {
     class: 'd-flex'

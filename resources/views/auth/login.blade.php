@@ -1,9 +1,24 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
+@if (session()->has("success"))
+            <div class="alert alert-success">
+                <h3>{{session()->get('success')}}</h3>
+            </div>           
+        @endif
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul >               
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach              
+            </ul>
+        </div>
+            
+        @endif
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header text-white" style="background-color:#0B6623 ;">{{ __('Connexion') }}</div>
 

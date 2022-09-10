@@ -16,9 +16,9 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('assets/img/slide/blac.jpg'); background-size: cover; background-repeat: no-repeat;">
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm"  style="background-color:#0E4C92 ;">
+        <nav class="navbar navbar-expand-md shadow-sm"  style="background-color: #0050e3;">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     {{ config('app.name', 'Dev Académie') }}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Classe;
 use App\Http\Requests\ClasseFormRequest;
+use App\Models\Inscription;
 use App\Models\Niveaux;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class ClasseController extends Controller
         $classe = Classe::all();
         $classes = Classe::count();
         $niveau = Niveaux::all();
-        return view('admin.classes.index', compact('classe', 'classes', 'niveau'));
+        $classess = Inscription::where('classe_id', '1')->get();
+        return view('admin.classes.index', compact('classe', 'classess', 'niveau'));
 
     }
     

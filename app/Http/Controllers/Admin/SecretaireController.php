@@ -17,7 +17,7 @@ class SecretaireController extends Controller
         $classes = Classe::count();
         $users = User::count();
         $enseignants = Enseignant::count();
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
 
         $secretaires = Secretaire::all();
         return view('admin.secretaires.index', compact('secretaires', 'student', 'enseignants', 'users', 'classes'));
@@ -76,14 +76,7 @@ class SecretaireController extends Controller
 
                     ]);
 
-                    $secretaires = Secretaire::all();
-
-                    $classes = Classe::count();
-                    $users = User::count();
-                    $enseignants = Enseignant::count();
-                    $student = Inscription::where('statut', 'Eleve')->get()->count();
-                    
-                    return view('admin.secretaires.index', compact('enseignants', 'student', 'classes', 'users', 'secretaires'))->with('success', 'Félicitaion secrétaire ajouté (e) avec succès !');
+                    return redirect('admin/secretaires')->with('success', 'Félicitaion secrétaire ajouté (e) avec succès !');
                              
                 }
             }

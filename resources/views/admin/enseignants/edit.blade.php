@@ -22,8 +22,8 @@
     @endif
 
     <div class="card mt-4">
-        <div class="card-header">
-            <h4>La liste des enseignants
+        <div class="card-header" style="background-color: #0050e3;">
+            <h4 class="text-white">La liste des enseignants
                 <a href="{{ url('admin/enseignants')}}" class="btn btn-primary btn-sm text-white float-end" >Liste enseignant </a>
             </h4>
         </div>

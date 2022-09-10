@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\ChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,8 +71,11 @@ Route::prefix('admin')->group(function(){
     Route::post('secretaires/create', [App\Http\Controllers\Admin\SecretaireController::class, 'store'])->name('secretaires.index');
 
 
+    Route::get('premiere', [App\Http\Controllers\Admin\PremiereController::class, 'index'])->name('admin.classes.premiere');
 
     Route::get('inscrit', [App\Http\Controllers\Admin\SignupController::class, 'index'])->name('admin.signup');
+    Route::get('inscrit/create', [App\Http\Controllers\Admin\SignupController::class, 'create'])->name('admin.signup.create');
+
     Route::post('inscrit', [App\Http\Controllers\Admin\SignupController::class, 'store'])->name('admin.signup.index');
     Route::get('edit-candidat/{id}', [App\Http\Controllers\Admin\SignupController::class, 'edit'])->name('admin.signup.edit');
     Route::put('inscrit/{id}', [App\Http\Controllers\Admin\SignupController::class, 'update'])->name('admin.signup.edit');
@@ -89,14 +93,21 @@ Route::prefix('admin')->group(function(){
     Route::post('delete-matieres', [App\Http\Controllers\Admin\MatiereController::class, 'destroy'])->name('matieres.index');
 
 
+    Route::get('calendar/index', [App\Http\Controllers\Admin\CalendarController::class, 'index'])->name('calendar.index');
+
+
     Route::get('calendrier/index', [App\Http\Controllers\Admin\CalendrierController::class, 'index'])->name('calendrier.index');
     Route::post('calendrier', [App\Http\Controllers\Admin\CalendrierController::class, 'store'])->name('calendrier.store');
     Route::patch('calendrier/update/{id}', [App\Http\Controllers\Admin\CalendrierController::class, 'update'])->name('calendrier.update');
 
     Route::get('findStudent', [App\Http\Controllers\Admin\SignupController::class, 'findStudentConfirmed'])->name('admin.signup.index');
 
+    // Route::get('graphique', [App\Http\Controllers\Admin\SignupController::class, 'index'])->name('admin.charts.statistique');
 
-    
+
+    Route::get('graphique', [App\Http\Controllers\Admin\ChartController::class, 'index'])->name('admin.charts.statistiques');
+
+    Route::get('tables', [App\Http\Controllers\Admin\ChartController::class, 'ok'])->name('admin.tables');
 
 
 
@@ -104,6 +115,7 @@ Route::prefix('admin')->group(function(){
     
 });
 
+Route::post('/parent-create', [App\Http\Controllers\Admin\ParentController::class, 'DirectParentRegister'])->name('parent.register');
 
 ################## Fin de Groupe fonction de l'administrateur  ########################
 
@@ -124,8 +136,12 @@ Route::prefix('parent')->group(function(){
     Route::post('my-profile-update', [App\Http\Controllers\Profile\UserController::class, 'store'] )->name('mon-profile');
 
 
-    Route::get('edit-eleve/{eleve_id}', [App\Http\Controllers\Parent\SignupController::class, 'edit'])->name('parent.edit');
+    Route::get('edit-eleve/{id}', [App\Http\Controllers\Parent\SignupController::class, 'edit'])->name('parent.edit');
     Route::put('signup/{signup-update}', [App\Http\Controllers\Parent\SignupController::class, 'update'])->name('parents.signup');
+
+    
+    Route::get('mon-profile', [App\Http\Controllers\Parent\ProfileController::class, 'index'] )->name('mon-profile');
+    Route::post('my-profile-update', [App\Http\Controllers\Parent\ProfileController::class, 'store'] )->name('mon-profile');
 
 
 });
