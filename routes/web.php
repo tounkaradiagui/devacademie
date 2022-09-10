@@ -147,7 +147,7 @@ Route::prefix('parent')->group(function(){
 });
 
 
-################## Fin  Groupe fonction de l'administrateur  ########################
+################## Fin  Groupe fonction de parent  ########################
 
 
 Route::prefix('eleves')->group(function(){
@@ -158,4 +158,54 @@ Route::prefix('eleves')->group(function(){
 
 
 });
+
+################## Debut  Groupe fonction de secretaire  ########################
+
+Route::prefix('secretaire')->group(function(){
+
+    Route::get('dashboard', [App\Http\Controllers\Secretaire\DashboardController::class, 'index'])->name('secretaire.dashboard');
+
+    Route::get('calendrier/index', [App\Http\Controllers\Secretaire\CalendrierController::class, 'index'])->name('calendrier.index');
+    Route::post('calendrier', [App\Http\Controllers\Secretaire\CalendrierController::class, 'store'])->name('calendrier.store');
+    Route::patch('calendrier/update/{id}', [App\Http\Controllers\Secretaire\CalendrierController::class, 'update'])->name('calendrier.update');
+
+    Route::get('mon-profile', [App\Http\Controllers\Secretaire\ProfileController::class, 'index'] )->name('mon-profile');
+    Route::post('my-profile-update', [App\Http\Controllers\Secretaire\ProfileController::class, 'store'] )->name('mon-profile');
+
+    Route::get('parents', [App\Http\Controllers\Secretaire\ParentController::class, 'index'])->name('secretaires.parents');
+    Route::get('eleves', [App\Http\Controllers\Secretaire\EleveController::class, 'index'])->name('secretaires.parents');
+    Route::get('enseignants', [App\Http\Controllers\Secretaire\EnseignantController::class, 'index'])->name('secretaires.parents');
+
+
+});
+
+
+
+################## Fin  Groupe fonction de secretaire  ########################
+
+
+// *****************************************************************
+
+
+
+################## Debut  Groupe fonction Enseignant  ########################
+
+
+Route::prefix('enseignant')->group(function(){
+
+    Route::get('dashboard', [App\Http\Controllers\Enseignant\DashboardController::class, 'index'])->name('enseignant.dashboard');
+
+    // Route::get('calendrier/index', [App\Http\Controllers\Secretaire\CalendrierController::class, 'index'])->name('calendrier.index');
+    // Route::post('calendrier', [App\Http\Controllers\Secretaire\CalendrierController::class, 'store'])->name('calendrier.store');
+    // Route::patch('calendrier/update/{id}', [App\Http\Controllers\Secretaire\CalendrierController::class, 'update'])->name('calendrier.update');
+
+    Route::get('mon-profile', [App\Http\Controllers\Enseignant\ProfileController::class, 'index'] )->name('mon-profile');
+    Route::post('my-profile-update', [App\Http\Controllers\Enseignant\ProfileController::class, 'store'] )->name('mon-profile');
+
+});
+
+
+
+################## Fin  Groupe fonction Enseignant  ########################
+
 

@@ -43,7 +43,7 @@ class SignupController extends Controller
 
         $classes = Classe::count();
         $users = User::count();
-        $student = Inscription::where('statut', 'Eleve')->get()->count();
+        $student = Inscription::where('statut', 'eleve')->get()->count();
         $enseignants = Enseignant::count();
         return view('admin.signup.create', compact('niveau', 'classe', 'annee', 'classes', 'student', 'enseignants', 'users'));
     }

@@ -74,7 +74,6 @@ class HomeController extends Controller
         {
             $enseignants = Enseignant::count();
             $users = User::count();
-            $student = Inscription::where('statut', 'eleve')->get()->count();
             $classes = Classe::count();
 
             $eleve = Eleve::Where('user_id', $user->id)->first();
@@ -85,11 +84,11 @@ class HomeController extends Controller
         {
             $enseignants = Enseignant::count();
             $users = User::count();
-            $student = Inscription::where('statut', 'eleve')->get()->count();
             $classes = Classe::count();
+            $studente = Inscription::where('classe_id', '3')->get()->count();
 
             $enseignant = Enseignant::Where('user_id', $user->id)->first();
-            return view('enseignants.dashboard', compact('enseignant', 'enseignants', 'student', 'users', 'classes'));
+            return view('enseignants.dashboard', compact('enseignant', 'enseignants', 'studente', 'users', 'classes'));
         }
 
         elseif ($user->statut == 'admin')
