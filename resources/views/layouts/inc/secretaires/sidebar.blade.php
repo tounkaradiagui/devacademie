@@ -155,7 +155,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{url('secretaire/trimestres/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Trimestres</p>
                 </a>

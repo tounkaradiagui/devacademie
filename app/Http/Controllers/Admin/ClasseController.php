@@ -17,8 +17,8 @@ class ClasseController extends Controller
         $classe = Classe::all();
         $classes = Classe::count();
         $niveau = Niveaux::all();
-        $classess = Inscription::where('classe_id', '1')->get();
-        return view('admin.classes.index', compact('classe', 'classes', 'niveau'));
+        $welcome = Inscription::where('classe_id', '1')->get();
+        return view('admin.classes.index', compact('classe', 'classes', 'niveau', 'welcome'));
 
     }
     

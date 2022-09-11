@@ -88,7 +88,7 @@ Route::prefix('admin')->group(function(){
 
     Route::get('matieres', [App\Http\Controllers\Admin\MatiereController::class, 'index'])->name('matieres');
     Route::post('matieres/create', [App\Http\Controllers\Admin\MatiereController::class, 'store'])->name('matieres.index');
-    Route::post('edit-matieres', [App\Http\Controllers\Admin\MatiereController::class, 'store'])->name('matieres.index');
+    Route::get('edit-matieres', [App\Http\Controllers\Admin\MatiereController::class, 'store'])->name('matieres.index');
 
     Route::post('delete-matieres', [App\Http\Controllers\Admin\MatiereController::class, 'destroy'])->name('matieres.index');
 
@@ -176,6 +176,10 @@ Route::prefix('secretaire')->group(function(){
     Route::get('eleves', [App\Http\Controllers\Secretaire\EleveController::class, 'index'])->name('secretaires.parents');
     Route::get('enseignants', [App\Http\Controllers\Secretaire\EnseignantController::class, 'index'])->name('secretaires.parents');
 
+    Route::get('trimestres/create', [App\Http\Controllers\Secretaire\TrimestreController::class, 'index'])->name('secretaire.trimestre');
+    Route::post('trimestres/create', [App\Http\Controllers\Secretaire\TrimestreController::class, 'store'])->name('secretaire.trimestre');
+    Route::get('edit-trimestres/{id}', [App\Http\Controllers\Secretaire\TrimestreController::class, 'edit'])->name('secretaire.trimestre');
+    Route::put('update-trimestres/{id}', [App\Http\Controllers\Secretaire\TrimestreController::class, 'update'])->name('secretaire.trimestre');
 
 });
 
@@ -201,6 +205,17 @@ Route::prefix('enseignant')->group(function(){
 
     Route::get('mon-profile', [App\Http\Controllers\Enseignant\ProfileController::class, 'index'] )->name('mon-profile');
     Route::post('my-profile-update', [App\Http\Controllers\Enseignant\ProfileController::class, 'store'] )->name('mon-profile');
+
+
+    Route::get('notes', [App\Http\Controllers\Enseignant\NoteController::class, 'index'])->name('enseignant.notes');
+    Route::post('notes/create', [App\Http\Controllers\Enseignant\NoteController::class, 'store'])->name('enseignant.notes.index');
+
+    Route::get('cours', [App\Http\Controllers\Enseignant\CoursController::class, 'index'])->name('enseignant.cours');
+    Route::post('cours', [App\Http\Controllers\Enseignant\CoursController::class, 'store'])->name('enseignant.cours.index');
+
+    Route::get('absences', [App\Http\Controllers\Enseignant\AbsenceController::class, 'index'])->name('enseignant.absences');
+    Route::post('absences', [App\Http\Controllers\Enseignant\AbsenceController::class, 'store'])->name('enseignant.absences.index');
+
 
 });
 

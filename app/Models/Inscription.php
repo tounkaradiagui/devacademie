@@ -50,4 +50,10 @@ class Inscription extends Model
     {
         return $this->belongsTo(parents::class, 'parent_id');
     }
+
+    public function eleves()
+    {
+        return $this->hasMany(Inscription::class,'eleve_id');
+
+    }
 }

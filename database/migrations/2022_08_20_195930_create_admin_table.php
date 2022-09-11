@@ -21,6 +21,7 @@ class CreateAdminTable extends Migration
             $table->string('sexe');
             $table->string('email');
             $table->string('adresse');
+            $table->string('phone');
             $table->string('username');
             $table->string('password');
             $table->unsignedBigInteger('user_id');

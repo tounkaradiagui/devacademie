@@ -6,6 +6,7 @@
   <title>Dev académie</title>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
   <!-- Google Font: Source Sans Pro -->
   
@@ -32,6 +33,7 @@
   integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
 
+  <link href="{{asset('assets/img/dev_logo.png')}}" rel="icon">
 
 
   <link rel="stylesheet" href="{{asset('admin/plugins/fullcalendar/main.css')}}">
@@ -80,9 +82,7 @@
 
 
 
-     <!-- jQuery -->
-     <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
-    <!-- jQuery UI 1.11.4 -->
+     
     <script src="{{asset('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
@@ -117,9 +117,9 @@
 
 
     <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- Page specific script -->
+    <!-- Bootstrap 4 -->
+    <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Page specific script -->
 
 
 
@@ -145,7 +145,7 @@
 <!-- fullCalendar 2.2.5 -->
 <script src="{{asset('admin/plugins/fullcalendar/main.js')}}"></script>
 
-<script>
+<!-- <script>
   $(function () {
 
     /* initialize the external events
@@ -311,7 +311,7 @@
       $('#new-event').val('')
     })
   })
-</script>
+</script> -->
 
 </body>
 </html>

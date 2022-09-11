@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
             <table id="example1" class="table table-bordered table-striped">
-                <thead class="text-center">
+                <thead class="text-center bg-dark">
                     <tr>
                         <th>Nom</th>
                         <th>Prénom</th>

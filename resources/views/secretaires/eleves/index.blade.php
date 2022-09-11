@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="card-body">
-                    <table id="Datatables" class="table table-striped table-bordered">
+                    <table id="example1" class="table table-bordered table-striped">
                         <thead class="bg-dark">
                             <tr>
                                 <th>Photo</th>
@@ -27,7 +27,7 @@
                                 <th>Niveau</th>
                                 <th>Classe</th>
                                 <th>Parent</th>
-                                <th colspan="2" >Actions</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>

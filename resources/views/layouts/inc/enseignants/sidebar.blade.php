@@ -101,9 +101,9 @@
             <ul class="nav nav-treeview">
 
             <li class="nav-item">
-                <a href="{{url('enseignant/matieres')}}" class="nav-link">
+                <a href="{{url('enseignant/cours')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Liste de matières</p>
+                  <p>Liste de cours</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -115,11 +115,16 @@
 
               <li class="nav-item">
                 <a href="{{url('enseignant/notes')}}" class="nav-link">
-                  <i class="nav-icon far fa-calendar-alt"></i>
+                  <i class="far fa-circle nav-icon"></i>
                   <p>
                     Notes
-                    <span class="badge badge-info right">2</span>
                   </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('enseignant/absences')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Liste des absences</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -141,12 +146,7 @@
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="{{url('enseignant/absences')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Liste des absences</p>
-                </a>
-              </li>
+             
             
             </ul>
           </li>

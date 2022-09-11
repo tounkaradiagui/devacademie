@@ -461,3 +461,86 @@ return view('admin.matieres.index', compact('matieres', 'niveau', 'classe', 'ens
          
         </ul>
       </nav>
+
+
+
+
+
+
+
+
+
+      $data = $request->validated();
+    
+    $cours = new Cours();
+    $cours->nom_du_cours = $data['note'];
+    $cours->matiere_id = $data['matiere_id'];
+    $cours->nombre_heures = $data['nombre_heures'];
+   
+
+    if ($request->hasFile('support')) {
+        $file = $request->file('support');
+
+        $ext = $file->getClientOriginalExtension();
+        $filename =time().'.'.$ext;
+        $file->move('uploads/cours', $filename);
+        $cours->support = $filename;
+
+
+
+        $data = $request->validate(
+            [
+                'nom_du_cours'=>['required','string','max:225'],
+                'nombre_heures'=>['required','string','max:225'],
+                'matiere_id'=> 'required',
+                'support'=>'required',                
+            ]);
+
+
+
+            if($data)
+            {
+
+                $fileName = time().'.'.$request->support->extension();  
+                $request->support->move(public_path('uploads/cours'), $fileName);
+
+                $cours = Cours::create(
+                    [
+                        'nom_du_cours'=>$request['nom_du_cours'],
+                        'nombre_heures'=>$request['nombre_heures'],                
+                        'matiere_id'=>$request['matiere_id'],
+                        'support'=>$fileName,
+                    ]
+                );
+
+
+
+
+
+
+
+
+
+
+                public function store(CoursFormRequest $request)
+    {
+        $data = $request->validated();
+    
+        $cours = new Cours;
+        $cours->nom_du_cours = $data['nom_du_cours'];
+        $cours->matiere_id = $data['matiere_id'];
+        $cours->nombre_heures = $data['nombre_heures'];
+        $cours->support = $data['support'];
+    
+        if ($request->hasFile('support')) {
+            $file = $request->file('support');
+    
+            $ext = $file->getClientOriginalExtension();
+            $filename =time().'.'.$ext;
+            $file->move('uploads/documents', $filename);
+            $cours->support = $filename;
+
+        }
+
+        $cours->save();
+        return redirect('enseignant/cours')->with('success', 'Le cours a été ajouté avec succès !');

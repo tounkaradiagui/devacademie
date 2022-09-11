@@ -226,7 +226,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($classess as $display)
+                        @foreach ($welcome as $display)
                             
                         <tr>
                             <td>
