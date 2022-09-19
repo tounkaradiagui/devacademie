@@ -24,4 +24,9 @@ class Cours extends Model
         return $this->belongsTo(Matiere::class,'matiere_id');
 
     }
+
+    public function absences()
+    {
+        return $this->hasMany(Absence::class, 'cours_id' );
+    }
 }

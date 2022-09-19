@@ -8,10 +8,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #0050e3;">
-                <h5 class="modal-title text-white" id="exampleModalLabel">Ajouter une cours</h5>
+                <h5 class="modal-title text-white" id="exampleModalLabel">Ajouter un cours</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{url('enseignant/cours')}}" method="post">
+            <form action="{{url('enseignant/cours')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                 
@@ -91,7 +91,7 @@
             <div class="card">
                 <div class="card-header text-white" style="background-color: #0050e3;">
 
-                <h5>Notes des élèves dans ma classe <a href="" data-bs-toggle="modal" data-bs-target="#ajouter_note" class="btn btn-success btn-sm text-white float-end" >Ajouter une Note</a></h5>
+                <h5>Mes cours <a href="" data-bs-toggle="modal" data-bs-target="#ajouter_note" class="btn btn-success btn-sm text-white float-end" >Ajouter un cours</a></h5>
                     
                 </div>
                 <div class="card-body">
@@ -110,9 +110,11 @@
                             @foreach ($cours as $display )
                             <tr>
                                 <td>{{$display->nom_du_cours}}</td>
-                                <td>{{$display->matieres}}</td>
+                                <td>{{$display->matiere->libelle}}</td>
                                 <td>{{$display->nombre_heures}}</td>
-                                <td>{{$display->support}}</td>
+                                <td >
+                                    <a href="{{url('uploads/cours/' .$display->support)}}" download title="Télécharger vos documents" > <i class="material-icons" style="font-size:30px">cloud_download</i> </a>
+                                </td>
                                 <td>{{$display->created_at}}</td>
                                 <td class="text-center">
                                     <a href="{{url('enseignant/edit-cours/'.$display->id)}}" title="Modifier cette classe"><i class="fa fa-edit" style="font-size:20px; color:#30c93e;"></i></a>          

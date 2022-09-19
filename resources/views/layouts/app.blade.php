@@ -16,7 +16,7 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('assets/img/slide/blac.jpg'); background-size: cover; background-repeat: no-repeat;">
+<body style="background-image: url('assets/img/slide/home1.jpg'); background-size: cover; background-repeat: no-repeat;">
     <div id="app">
         <nav class="navbar navbar-expand-md shadow-sm"  style="background-color: #0050e3;">
             <div class="container">

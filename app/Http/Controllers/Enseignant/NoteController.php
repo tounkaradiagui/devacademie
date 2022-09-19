@@ -4,27 +4,33 @@ namespace App\Http\Controllers\Enseignant;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NoteFormRequest;
+use App\Models\Enseignant;
 use App\Models\Inscription;
 use App\Models\Matiere;
 use App\Models\Niveaux;
 use App\Models\Note;
 use App\Models\Trimestre;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
     public function index()
     {
-        $studente = Inscription::where('classe_id', '3')->get()->count();
 
-        $matieres = Matiere::where('classe_id', '3')->get();
-        $kalanden = Inscription::where('classe_id', '3')->get();
-        $trimestre = Trimestre::all();
+        $user = Auth::user();
+        $enseignant = Enseignant::where('user_id', $user->id)->first();
+        $matieres = Matiere::where('enseignant_id', $enseignant->id)->get();
+
+        $studente = Inscription::where('classe_id', $enseignant->id)->get()->count();
+        $studentes = Inscription::where('classe_id', $enseignant->id)->get();
+
+        $notes = Note::where('trimestre_id', $enseignant->id)->get();
         
-        $notes = Note::all();
-        return view('enseignants.notes.index', compact('matieres','kalanden', 'notes', 'studente', 'trimestre'));
-    }
+        $trimestres = Trimestre::all();
 
+        return view('enseignants.notes.index', compact('matieres', 'notes', 'studentes', 'studente', 'trimestres'));
+    }
 
     public function create()
     {

@@ -56,4 +56,9 @@ class Inscription extends Model
         return $this->hasMany(Inscription::class,'eleve_id');
 
     }
+
+    public function absences()
+    {
+        return $this->hasMany(Inscription::class, 'eleve_id' );
+    }
 }

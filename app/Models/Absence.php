@@ -17,4 +17,24 @@ class Absence extends Model
         'avertissements',
 
     ];
+
+    public function matiere()
+    {
+        return $this->belongsTo(Matiere::class,'matiere_id');
+
+    }
+
+
+    public function eleve()
+    {
+        return $this->belongsTo(Inscription::class,'eleve_id');
+
+    }
+
+
+    public function cours()
+    {
+        return $this->belongsTo(Cours::class,'cours_id');
+
+    }
 }

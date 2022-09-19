@@ -4,21 +4,34 @@ namespace App\Http\Controllers\Enseignant;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cours;
+use App\Models\Enseignant;
 use App\Models\Inscription;
 use App\Models\Matiere;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class CoursController extends Controller
 {
     public function index()
     {
-        $studente = Inscription::where('classe_id', '3')->get()->count();
-
-        $matieres = Matiere::where('classe_id', '3')->get();
-        $kalanden = Inscription::where('classe_id', '3')->get();
+        $user=Auth::user(); //current user (utilisateur connecté)
+        $enseignant = Enseignant::where('user_id', $user->id)->first(); //id de l'enseignant
+        $kalanden = Inscription::where('classe_id', $enseignant->id)->get();
         
-        $cours = Cours::all();
-        return view('enseignants.cours.index', compact('matieres','kalanden', 'cours', 'studente'));
+        
+        $yere = Auth::user();
+        $maitre = Enseignant::where('user_id', $yere->id)->first(); //id de l'enseignant
+        $matieres = Matiere::where('enseignant_id', $maitre->id)->get();
+        $cours = Cours::where('matiere_id', $maitre->id)->get();
+
+       
+        // $studente = Inscription::where('classe_id', '3')->get()->count();
+        // $kalanden = Inscription::where('classe_id', '3')->get();
+        
+        
+        return view('enseignants.cours.index', compact('matieres','kalanden', 'cours'));
     }
 
 

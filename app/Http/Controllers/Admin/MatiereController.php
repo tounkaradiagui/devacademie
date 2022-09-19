@@ -11,6 +11,7 @@ use App\Models\Inscription;
 use App\Models\User;
 use App\Models\Niveaux;
 use App\Models\Enseignant;
+use Illuminate\Support\Facades\Auth;
 
 class MatiereController extends Controller
 {
@@ -24,9 +25,12 @@ class MatiereController extends Controller
 
         $classe = Classe::all();
         $niveau = Niveaux::all();
-        $enseignant = Enseignant::all();
 
+        // $user=Auth::user(); //current user (utilisateur connecté)
+        $enseignant = Enseignant::all(); //id du parent qui a fait la demande
         $matieres = Matiere::all();
+
+
         return view('admin.matieres.index', compact('matieres', 'student', 'users', 'enseignants', 'classes', 'enseignant', 'niveau', 'classe'));
     }
 

@@ -15,7 +15,7 @@
                 <p>Nombre de classes</p>
               </div>
               <div class="icon">
-                <i class="ion ion-bag"></i>
+              <i class="fa-sharp fa-solid fa-school"></i>
               </div>
               <a href="#" class="small-box-footer">plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -30,7 +30,7 @@
                 <p>Nombre d'enfants</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+              <i class="fa-solid fa-users"></i>
               </div>
               <a href="#" class="small-box-footer">plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -45,7 +45,7 @@
                 <p>Nombre d'enseignants</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+              <i class="fa-sharp fa-solid fa-user-tie"></i>
               </div>
               <a href="#" class="small-box-footer">plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
             </div>

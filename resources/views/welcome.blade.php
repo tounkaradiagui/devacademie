@@ -63,7 +63,7 @@
     <div class="container d-flex align-items-center" >
 
       <div class="logo me-auto ">
-        <h1><a href="index.html" class="text-white">Dev Académie</a></h1>
+        <h1><a href="#" class="text-white">Dev Académie</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -131,9 +131,8 @@
           <div class="carousel-item" style="background-image: url('assets/img/slide/ok.jpg');">
             <div class="carousel-container">
               <div class="carousel-content container">
-                <h2 class="animate__animated animate__fadeInDown">Jeux de cour de recréation</h2>
+                <h2 class="animate__animated animate__fadeInDown">Jeux dans la cour </h2>
                 <p class="animate__animated animate__fadeInUp">La récréation était pour tous un moment de détente. Donc, il est temps de pratiquer les jeux de cour de récréation d’autrefois. Les jeux d’autrefois à l’école ont un rôle important. Ils rythment les journées des élèves.</p>
-                <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
               </div>
             </div>
           </div>
@@ -159,8 +158,8 @@
 
         <div class="row no-gutters">
           <div class="col-lg-6 video-box">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <img src="assets/img/ecole.jfif" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=au7_QdsI2Gw" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
           <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
@@ -172,17 +171,7 @@
                 de la gestion des classes et des notes des d’élèves.</p>
             </div>
 
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
+            
 
           </div>
         </div>
@@ -216,20 +205,20 @@
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="300">
             <span style="color: #0050e3;"><strong>04</strong></span>
-            <h4> <strong>Repellendus molestiae</strong></h4>
-            <p style="color: #000;">Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
+            <h4> <strong>Administration</strong></h4>
+            <p style="color: #000;">Gagner du temps sur votre gestion quotidienne</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="400">
             <span style="color: #0050e3;"><strong>05</strong></span>
-            <h4> <strong>Sapiente Magnam</strong></h4>
-            <p style="color: #000;">Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
+            <h4> <strong>Enseignants</strong></h4>
+            <p style="color: #000;">Automatisez et simplifier vos tâches</p>
           </div>
 
           <div class="col-lg-4 col-md-6 content-item" data-aos="fade-up" data-aos-delay="500">
             <span style="color: #0050e3;"><strong>06</strong></span>
-            <h4> <strong>Facilis Impedit</strong> </h4>
-            <p style="color: #000;">Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
+            <h4> <strong>Secrétaire</strong> </h4>
+            <p style="color: #000;">Plus de perte ou de tri à faire : tous les documents sont centralisés</p>
           </div>
 
         </div>
@@ -246,32 +235,32 @@
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up">
             <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-simple-smile" style="color: #20b38e;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="text-white purecounter"></span>
-              <p class="text-white">Happy Clients</p>
+              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="text-white purecounter"></span>
+              <p class="text-white">Nombre d'établissements</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="200">
             <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-document-folder" style="color: #c042ff;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class=" text-white purecounter"></span>
-              <p class="text-white">Projects</p>
+              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class=" text-white purecounter"></span>
+              <p class="text-white">Niveau Primaire</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="400">
             <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-live-support" style="color: #46d1ff;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="text-white purecounter"></span>
-              <p class="text-white">Hours Of Support</p>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="text-white purecounter"></span>
+              <p class="text-white">Niveau Sécondaire</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 text-center" data-aos="fade-up" data-aos-delay="600">
             <div class="count-box" style="background-color: #0B6623 ;">
               <i class="bi bi-users-alt-5" style="color: #ffb459;"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="text-white purecounter"></span>
-              <p class="text-white">Hard Workers</p>
+              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1" class="text-white purecounter"></span>
+              <p class="text-white">Lycée</p>
             </div>
           </div>
 
@@ -285,39 +274,39 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Nos partenaires</h2>
+          <h2>Ils nous font confiance</h2>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><i class="bi bi-chat-left-dots"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <h4 class="title"><a href="">Orange Mali</a></h4>
+            <p class="description"></p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bi bi-bounding-box"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <h4 class="title"><a href="">ESCAE</a></h4>
+            <p class="description"></p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
             <div class="icon"><i class="bi bi-globe"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <h4 class="title"><a href="">Simplon</a></h4>
+            <p class="description"></p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
             <div class="icon"><i class="bi bi-broadcast"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <h4 class="title"><a href="">IRD</a></h4>
+            <p class="description"></p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <h4 class="title"><a href="">CIRTIC</a></h4>
+            <p class="description"></p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
             <div class="icon"><i class="bi bi-calendar2-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            <h4 class="title"><a href="">MakeSense</a></h4>
+            <p class="description"></p>
           </div>
         </div>
 
@@ -329,17 +318,17 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="section-title">
-          <h2>Our Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Quelques Captures</h2>
+          <p>Voir ci-dessous les images des interfaces de mon application</p>
         </div>
 
         <div class="row">
           <div class="col-lg-12">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter="*" class="filter-active">Toutes</li>
+              <li data-filter=".filter-app">Liste Elèves</li>
+              <li data-filter=".filter-card">Ensignants</li>
+              <li data-filter=".filter-web">Dashboard</li>
             </ul>
           </div>
         </div>
@@ -348,13 +337,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/1.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
+                <p>Liste des élèves</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La vue du secrétaire"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="plus de details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -362,13 +350,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/16.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <p>Page de connexion</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/16.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La vue des tous"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -376,13 +363,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/4.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
+                <p>Dashboard Directeur</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/4.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="La vue du DG"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -390,13 +376,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/12.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
+                <p>Elèves inscris</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/12.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="inscris"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -404,13 +389,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/13.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
+                <p>Profile</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/13.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Profile"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -418,13 +402,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/14.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
+                <p>Absences</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/14.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ajout d'une absence"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -432,13 +415,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/6.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
+                <p>Matière</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/6.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ajout d'une matière"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -446,13 +428,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/8.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
+                <p>Liste des enseignants</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/8.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Liste enseignants"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -460,13 +441,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/10.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
+                <p>Liste de pré-inwcriptions</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
+                  <a href="assets/img/portfolio/10.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Pré-inscriptions"><i class="bi bi-plus"></i></a>
+                  <a href="#" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
             </div>
@@ -483,7 +463,7 @@
 
         <div class="section-title">
           <h2>Notre équipe</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+          <p>Une équipe dynamique pour le développement éducatif</p>
         </div>
 
         <div class="row">
@@ -504,11 +484,12 @@
             </div>
           </div>
 
+          
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/sev.jpeg" class="img-fluid" alt=""></div>
               <div class="member-info" style="background-color: #0B6623 ;">
-                <h4>Sarah Jhonson</h4>
+                <h4>Moussa wagué</h4>
                 <span>Product Manager</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
@@ -519,13 +500,12 @@
               </div>
             </div>
           </div>
-
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/sev.jpeg" class="img-fluid" alt=""></div>
               <div class="member-info" style="background-color: #0B6623 ;">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
+                <h4>Séverin Togo</h4>
+                <span>English Teacher</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -538,10 +518,10 @@
 
           <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/team/diagui.jpeg" class="img-fluid" alt=""></div>
               <div class="member-info" style="background-color: #0B6623 ;">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
+                <h4>Diagui Tounkara</h4>
+                <span>Econome</span>
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -562,52 +542,33 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
+          <h2> <strong style="color: #0050e3;"  >Deux mots</strong> <strong style="color: #0B6623;" >sur le logo</strong> </h2>
         </div>
 
         <div class="row  d-flex align-items-stretch">
 
-          <div class="col-lg-6 faq-item" data-aos="fade-up">
-            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
-            <p>
-              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-            </p>
+          <div class="col-lg-6 faq-item" data-aos="fade-up" >
+            <h4 style="color: #000;">Pourquoi la couleur bleue ?</h4>
+              <p style="color: #000;">
+                Premièrement, la couleur bleue est ma passion. Je l'ai choisi pour mon logo car c'est
+                la couleur de la confiance et il représente l'ombre de la mer et du ciel et est censé
+                induire le calme et transmettre la tranquillité.
+              </p>
           </div>
 
-          <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100">
-            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
-            <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-            </p>
-          </div>
-
-          <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="200">
-            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
-            <p>
-              Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
-            </p>
-          </div>
+          
 
           <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="300">
-            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
-            <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-            </p>
+            <h4 style="color: #000;">Pourquoi la couleur Verte ?</h4>
+              <p style="color: #000;">
+                La couleur verte est une couleur de croissance et de santé.
+                J'ai choisi le vert car je suis pour la verdure ou la protection
+                de mon environnement. Le vert évoque également un sentiment d'abondance et
+                un environnement abondant tout en procurant un sentiment de repos et de sécurité.
+              </p>
           </div>
 
-          <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="400">
-            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
-            <p>
-              Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-            </p>
-          </div>
-
-          <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="500">
-            <h4>Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?</h4>
-            <p>
-              Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-            </p>
-          </div>
+          
 
         </div>
 
@@ -659,7 +620,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Motif" required>
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" required>
               </div>
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Merci de saisir votre message ici svp !" required></textarea>
@@ -736,7 +697,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mamba-one-page-bootstrap-template-free/ -->
-        Designed by <a href="https://bootstrapmade.com/" class="text-white">Diagui TOUNKARA @Simplon.co</a>
+        Designed by <a href="#" class="text-white">Diagui TOUNKARA @Simplon.co</a>
       </div>
     </div>
   </footer><!-- End Footer -->

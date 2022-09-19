@@ -106,9 +106,9 @@
                         <tbody>
                             @foreach ($absences as $display )
                             <tr>
-                                <td>{{$display->nom}}</td>
-                                <td>{{$display->prenom}}</td>
-                                <td>{{$display->cours}}</td>
+                                <td>{{$display->eleve->nom}}</td>
+                                <td>{{$display->eleve->prenom}}</td>
+                                <td>{{$display->cours->nom_du_cours}}</td>
                                 <td>{{$display->motifs}}</td>
                                 <td>{{$display->avertissements}}</td>
                                 <td>{{$display->created_at}}</td>

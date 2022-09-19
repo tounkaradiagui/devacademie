@@ -40,7 +40,7 @@
                             <div class="col-md-12">
                                 <label for="eleve" class="float-start">Elève</label>
                                 <select name="eleve_id" class="form-control">
-                                @foreach ($kalanden as $new)
+                                @foreach ($studentes as $new)
                                     <option value="{{$new->id}}">{{ $new->nom}} {{ $new->prenom}}</option>
                                 @endforeach
                                 </select>
@@ -51,7 +51,7 @@
                             <div class="col-md-12">
                                 <label for="niveau" class="float-start">Trimestre</label>
                                 <select name="trimestre_id" class="form-control">
-                                @foreach ($trimestre as $new)
+                                @foreach ($trimestres as $new)
                                     <option value="{{$new->id}}">{{ $new->nom_trimestre}}</option>
                                 @endforeach
                                 </select>
@@ -120,7 +120,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($kalanden as $display )
+                            @foreach ($studentes as $display )
                             <tr>
                                 <td>{{$display->nom}}</td>
                                 <td>{{$display->prenom}}</td>

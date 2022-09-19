@@ -10,7 +10,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>1</h3>
+                <h3>30</h3>
 
                 <p>Nombre de matières</p>
               </div>
@@ -25,7 +25,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>{{$studente}}<sup style="font-size: 20px"></sup></h3>
+                <h3>0<sup style="font-size: 20px"></sup></h3>
 
                 <p>Nombre d'élèves</p>
               </div>
